@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Menus">
+      <UniqueIdentifier>{40c3cb0d-2b95-4acb-92f7-db142a59816e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Characters">
+      <UniqueIdentifier>{3786beaa-d385-4ac4-a3b6-c1ca20e9e86b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{2b3d4f19-bf4f-41cb-af2b-4ad6975ac9cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HUDItems">
+      <UniqueIdentifier>{d1acff22-e897-4866-bee5-8d55e1b6ea16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HUDItems\Dialogue">
+      <UniqueIdentifier>{28b79cc5-2c0f-45ed-82e9-48a18dc80931}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SoundEffects">
+      <UniqueIdentifier>{e33c5972-ed29-4c7c-85b1-255961790afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HUDItems\HUD%27s">
+      <UniqueIdentifier>{16c03c57-48fe-4b6a-aed5-d2ba38df6913}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionsMenu.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillMenu.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="Instructions.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Prisoner.cpp">
+      <Filter>Source Files\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Guard.cpp">
+      <Filter>Source Files\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="prisonWalls.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Furniture.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Warden.cpp">
+      <Filter>Source Files\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillItems.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Nurse.cpp">
+      <Filter>Source Files\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="prisonerDialogue.cpp">
+      <Filter>Source Files\HUDItems\Dialogue</Filter>
+    </ClCompile>
+    <ClCompile Include="guardDialogue.cpp">
+      <Filter>Source Files\HUDItems\Dialogue</Filter>
+    </ClCompile>
+    <ClCompile Include="Doors.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="SFX.cpp">
+      <Filter>Source Files\SoundEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="furnitureInv.cpp">
+      <Filter>Source Files\HUDItems\HUD%27s</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Source Files\HUDItems\HUD%27s</Filter>
+    </ClCompile>
+    <ClCompile Include="InventoryItems.cpp">
+      <Filter>Source Files\HUDItems\HUD%27s</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mapLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Instructions.h">
+      <Filter>Source Files\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Source Files\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionsMenu.h">
+      <Filter>Source Files\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillMenu.h">
+      <Filter>Source Files\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Source Files\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Prisoner.h">
+      <Filter>Source Files\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Guard.h">
+      <Filter>Source Files\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Furniture.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="prisonWalls.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Source Files\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="Warden.h">
+      <Filter>Source Files\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillItems.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Nurse.h">
+      <Filter>Source Files\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="prisonerDialogue.h">
+      <Filter>Source Files\HUDItems\Dialogue</Filter>
+    </ClInclude>
+    <ClInclude Include="guardDialogue.h">
+      <Filter>Source Files\HUDItems\Dialogue</Filter>
+    </ClInclude>
+    <ClInclude Include="Doors.h">
+      <Filter>Source Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="SFX.h">
+      <Filter>Source Files\SoundEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="furnitureInv.h">
+      <Filter>Source Files\HUDItems\HUD%27s</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>Source Files\HUDItems\HUD%27s</Filter>
+    </ClInclude>
+    <ClInclude Include="InventoryItems.h">
+      <Filter>Source Files\HUDItems\HUD%27s</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Map1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

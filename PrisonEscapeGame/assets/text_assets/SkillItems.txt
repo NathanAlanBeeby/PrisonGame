@@ -1,0 +1,113 @@
+Number of SkillItems: 28
+bike1
+1280 2688
+64 64
+../assets/image_assets/Furniture/Bike.png
+bike2
+1280 2880
+64 64
+../assets/image_assets/Furniture/Bike.png
+bike3
+1280 3072
+64 64
+../assets/image_assets/Furniture/Bike.png
+bike4
+1280 3264
+64 64
+../assets/image_assets/Furniture/Bike.png
+bike5
+1280 3456
+64 64
+../assets/image_assets/Furniture/Bike.png
+bike6
+1280 3648
+64 64
+../assets/image_assets/Furniture/Bike.png
+weights 1
+128 2688
+128 64
+../assets/image_assets/Furniture/WeightsBench.png
+weights 2
+128 2880
+128 64
+../assets/image_assets/Furniture/WeightsBench.png
+weights 3
+128 3072
+128 64
+../assets/image_assets/Furniture/WeightsBench.png
+weights 4
+128 3264
+128 64
+../assets/image_assets/Furniture/WeightsBench.png
+weights 5
+128 3456
+128 64
+../assets/image_assets/Furniture/WeightsBench.png
+weights 6
+128 3648
+128 64
+../assets/image_assets/Furniture/WeightsBench.png
+Bookshelf 1
+2624 3904
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 2
+2624 4032
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 3
+2624 4160
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 4
+2624 4288
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 5
+2496 3904
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 6
+2496 4032
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 7
+2496 4160
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 8
+2496 4288
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 9
+2240 3904
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 10
+2240 4032
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 11
+2240 4160
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 12
+2240 4288
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 13
+2112 3904
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 14
+2112 4032
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 15
+2112 4160
+128 64
+../assets/image_assets/Furniture/Bookshelf.png
+Bookshelf 16
+2112 4288
+128 64
+../assets/image_assets/Furniture/Bookshelf.png

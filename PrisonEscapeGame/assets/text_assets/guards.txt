@@ -1,0 +1,41 @@
+Number of guards: 10
+guard 1
+128 1920
+32 32
+../assets/image_assets/characters/guard_images.png
+guard 2
+896 1920
+32 32
+../assets/image_assets/characters/guard_images.png
+guard 3
+192 3392
+32 32
+../assets/image_assets/characters/guard_images.png
+guard 4
+192 3840
+32 32
+../assets/image_assets/characters/guard_images.png
+guard 5
+896 3392
+32 32
+../assets/image_assets/characters/guard_images.png
+guard 6
+896 3840
+32 32
+../assets/image_assets/characters/guard_images.png
+guard 7
+2496 3264
+32 32
+../assets/image_assets/characters/guard_images.png
+guard 8
+2240 3264
+32 32
+../assets/image_assets/characters/guard_images.png
+guard 9
+256 4096
+32 32
+../assets/image_assets/characters/guard_images.png
+guard 10
+1472 4096
+32 32
+../assets/image_assets/characters/guard_images.png

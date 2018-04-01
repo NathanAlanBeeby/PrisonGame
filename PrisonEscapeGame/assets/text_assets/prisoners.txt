@@ -1,0 +1,41 @@
+Number of Prisoners: 10
+prisoner 1
+720 192
+32 32
+../assets/image_assets/characters/prisoner_images.png
+prisoner 2
+1024 192
+32 32
+../assets/image_assets/characters/prisoner_images.png
+prisoner 3
+1344 192
+32 32
+../assets/image_assets/characters/prisoner_images.png
+prisoner 4
+1664 192
+32 32
+../assets/image_assets/characters/prisoner_images.png
+prisoner 5
+192 4352
+32 32
+../assets/image_assets/characters/prisoner_images.png
+prisoner 6
+448 4352
+32 32
+../assets/image_assets/characters/prisoner_images.png
+prisoner 7
+704 4352
+32 32
+../assets/image_assets/characters/prisoner_images.png
+prisoner 8
+960 4352
+32 32
+../assets/image_assets/characters/prisoner_images.png
+prisoner 9
+1216 4352
+32 32
+../assets/image_assets/characters/prisoner_images.png
+prisoner 10
+1472 4352
+32 32
+../assets/image_assets/characters/prisoner_images.png

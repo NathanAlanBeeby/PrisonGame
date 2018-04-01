@@ -1,0 +1,23 @@
+Number of Walls: 11
+Wall 1
+0 0
+Wall 2
+64 0
+Wall 3
+128 0
+Wall 4
+192 0
+Wall 5
+256 0
+Wall 6
+320 0
+Wall 7
+384 0
+Wall 8
+448 0
+Wall 9
+512 0
+Wall 10
+574 0
+Wall 11
+640 0 

@@ -1,0 +1,514 @@
+Number of furniture: 127
+Toilet 1
+768 64
+64 64
+../assets/image_assets/Furniture/SinkToilet.png
+Toilet 2
+1088 64
+64 64
+../assets/image_assets/Furniture/SinkToilet.png
+Toilet 3
+1408 64
+64 64
+../assets/image_assets/Furniture/SinkToilet.png
+Toilet 4
+1728 64
+64 64
+../assets/image_assets/Furniture/SinkToilet.png
+Toilet 5
+2048 64
+64 64
+../assets/image_assets/Furniture/SinkToilet.png
+Toilet 6
+192 4224
+64 64
+../assets/image_assets/Furniture/SinkToilet.png
+Toilet 7
+448 4224
+64 64
+../assets/image_assets/Furniture/SinkToilet.png
+Toilet 8
+704 4224
+64 64
+../assets/image_assets/Furniture/SinkToilet.png
+Toilet 9
+960 4224
+64 64
+../assets/image_assets/Furniture/SinkToilet.png
+Toilet 10
+1216 4224
+64 64
+../assets/image_assets/Furniture/SinkToilet.png
+Toilet 11
+1472 4224
+64 64
+../assets/image_assets/Furniture/SinkToilet.png
+Chair 1
+2432 128
+64 64
+../assets/image_assets/Furniture/Chair.png
+Chair 2
+2432 576
+64 64
+../assets/image_assets/Furniture/Chair.png
+Chair 3
+2432 1024
+64 64
+../assets/image_assets/Furniture/Chair.png
+Chair 4
+2688 1024
+64 64
+../assets/image_assets/Furniture/Chair.png
+Chair 5
+2560 3200
+64 64
+../assets/image_assets/Furniture/Chair.png
+Chair 6
+2304 3200
+64 64
+../assets/image_assets/Furniture/Chair.png
+Chair 6
+2048 3200
+64 64
+../assets/image_assets/Furniture/Chair.png
+Cabinet 1
+2560 64
+64 64
+../assets/image_assets/Furniture/locker.png
+Cabinet 2
+2560 516
+64 64
+../assets/image_assets/Furniture/locker.png
+Cabinet 3
+2560 960
+64 64
+../assets/image_assets/Furniture/locker.png
+Cabinet 4
+2624 960
+64 64
+../assets/image_assets/Furniture/locker.png
+Cabinet 5
+2176 3136
+64 64
+../assets/image_assets/Furniture/locker.png
+Cabinet 6
+2240 3136
+64 64
+../assets/image_assets/Furniture/locker.png
+Cabinet 7
+2432 3136
+64 64
+../assets/image_assets/Furniture/locker.png
+Cabinet 8
+2496 3136
+64 64
+../assets/image_assets/Furniture/locker.png
+Cabinet 9
+2688 3136
+64 64
+../assets/image_assets/Furniture/locker.png
+Cabinet 10
+2752 3136
+64 64
+../assets/image_assets/Furniture/locker.png
+Bin 1
+2752 64
+64 64
+../assets/image_assets/Furniture/TrashBin.png
+Bin 2
+2752 512
+64 64
+../assets/image_assets/Furniture/TrashBin.png
+Bin 3
+2560 1472
+64 64
+../assets/image_assets/Furniture/TrashBin.png
+Bin 4
+2560 1600
+64 64
+../assets/image_assets/Furniture/TrashBin.png
+Bin 5
+1920 1600
+64 64
+../assets/image_assets/Furniture/TrashBin.png
+Bin 6
+2752 3392
+64 64
+../assets/image_assets/Furniture/TrashBin.png
+Bin 7
+64 1728
+64 64
+../assets/image_assets/Furniture/TrashBin.png
+Bin 8
+896 1728
+64 64
+../assets/image_assets/Furniture/TrashBin.png
+Bin 9
+832 448
+64 64
+../assets/image_assets/Furniture/TrashBin.png
+Bin 10
+1152 448
+64 64
+../assets/image_assets/Furniture/TrashBin.png
+Bin 11
+1472 448
+64 64
+../assets/image_assets/Furniture/TrashBin.png
+Shower 1
+64 64
+64 64
+../assets/image_assets/Furniture/Shower.png
+Shower 2
+64 256
+64 64
+../assets/image_assets/Furniture/Shower.png
+Shower 3
+64 448
+64 64
+../assets/image_assets/Furniture/Shower.png
+Shower 4
+64 640
+64 64
+../assets/image_assets/Furniture/Shower.png
+Shower 5
+64 832
+64 64
+../assets/image_assets/Furniture/Shower.png
+Shower 6
+64 1024
+64 64
+../assets/image_assets/Furniture/Shower.png
+Shower 7
+64 1216
+64 64
+../assets/image_assets/Furniture/Shower.png
+Washing 1
+1664 3136
+64 64
+../assets/image_assets/Furniture/Washer.png
+Washing 2
+1728 3136
+64 64
+../assets/image_assets/Furniture/Washer.png
+Basket 1
+1856 3392
+64 64
+../assets/image_assets/Furniture/WashingBasket.png
+Basket 2
+1920 3392
+64 64
+../assets/image_assets/Furniture/WashingBasket.png
+Manhole 1
+192 64
+64 64
+../assets/image_assets/Furniture/ManHole.png
+Manhole 2
+192 256
+64 64
+../assets/image_assets/Furniture/ManHole.png
+Manhole 3
+192 448
+64 64
+../assets/image_assets/Furniture/ManHole.png
+Manhole 4
+192 640
+64 64
+../assets/image_assets/Furniture/ManHole.png
+Manhole 5
+192 832
+64 64
+../assets/image_assets/Furniture/ManHole.png
+Manhole 6
+192 1024
+64 64
+../assets/image_assets/Furniture/ManHole.png
+Manhole 7
+192 1216
+64 64
+../assets/image_assets/Furniture/ManHole.png
+Phone 1
+1088 1024
+64 64
+../assets/image_assets/Furniture/PayPhone.png
+Phone 2
+1280 1024
+64 64
+../assets/image_assets/Furniture/PayPhone.png
+Phone 3
+1472 1024
+64 64
+../assets/image_assets/Furniture/PayPhone.png
+Phone 4
+1664 1024
+64 64
+../assets/image_assets/Furniture/PayPhone.png
+Microwave 1
+1728 448
+128 64
+../assets/image_assets/Furniture/MicrowaveAndKettle.png
+Microwave 2
+1856 448
+128 64
+../assets/image_assets/Furniture/MicrowaveAndKettle.png
+Television 1
+640 1216
+128 64
+../assets/image_assets/Furniture/TV.png
+Television 2
+1920 1024
+128 64
+../assets/image_assets/Furniture/TV.png
+sofa 1
+576 1088
+128 64
+../assets/image_assets/Furniture/Sofa.png
+sofa 2
+704 1088
+128 64
+../assets/image_assets/Furniture/Sofa.png
+sofa 3
+1856 896
+128 64
+../assets/image_assets/Furniture/Sofa.png
+sofa 4
+1984 896
+128 64
+../assets/image_assets/Furniture/Sofa.png
+ftLocker 1
+640 64
+128 64
+../assets/image_assets/Furniture/Footlocker.png
+ftLocker 2
+960 64
+128 64
+../assets/image_assets/Furniture/Footlocker.png
+ftLocker 3
+1280 64
+128 64
+../assets/image_assets/Furniture/Footlocker.png
+ftLocker 4
+1600 64
+128 64
+../assets/image_assets/Furniture/Footlocker.png
+ftLocker 5
+1920 64
+128 64
+../assets/image_assets/Furniture/Footlocker.png
+Bed 1
+576 64
+64 128
+../assets/image_assets/Furniture/prisonBed.png
+Bed 2
+896 64
+64 128
+../assets/image_assets/Furniture/prisonBed.png
+Bed 3
+1216 64
+64 128
+../assets/image_assets/Furniture/prisonBed.png
+Bed 4
+1536 64
+64 128
+../assets/image_assets/Furniture/prisonBed.png
+Bed 5
+1856 64
+64 128
+../assets/image_assets/Furniture/prisonBed.png
+Bed 6
+64 4224
+64 128
+../assets/image_assets/Furniture/prisonBed.png
+Bed 7
+320 4224
+64 128
+../assets/image_assets/Furniture/prisonBed.png
+Bed 8
+576 4224
+64 128
+../assets/image_assets/Furniture/prisonBed.png
+Bed 9
+832 4224
+64 128
+../assets/image_assets/Furniture/prisonBed.png
+Bed 10
+1088 4224
+64 128
+../assets/image_assets/Furniture/prisonBed.png
+Bed 11
+1344 4224
+64 128
+../assets/image_assets/Furniture/prisonBed.png
+MedBed 1
+2688 192
+128 128
+../assets/image_assets/Furniture/MedicalBed.png
+MedBed 2
+2688 320
+128 128
+../assets/image_assets/Furniture/MedicalBed.png
+MedBed 3
+2688 640
+128 128
+../assets/image_assets/Furniture/MedicalBed.png
+MedBed 4
+2688 768
+128 128
+../assets/image_assets/Furniture/MedicalBed.png
+Desk 1
+2432 64
+128 64
+../assets/image_assets/Furniture/OfficeDesk.png
+Desk 2
+2432 512
+128 64
+../assets/image_assets/Furniture/OfficeDesk.png
+Desk 3
+2432 960
+128 64
+../assets/image_assets/Furniture/OfficeDesk.png
+Desk 4
+2688 960
+128 64
+../assets/image_assets/Furniture/OfficeDesk.png
+Desk 5
+2560 3136
+128 64
+../assets/image_assets/Furniture/OfficeDesk.png
+Desk 6
+2304 3136
+128 64
+../assets/image_assets/Furniture/OfficeDesk.png
+Desk 7
+2048 3136
+128 64
+../assets/image_assets/Furniture/OfficeDesk.png
+Mop 1
+1024 1920
+64 128
+../assets/image_assets/Furniture/MopAndBucket.png
+Mop 2
+1024 1728
+64 128
+../assets/image_assets/Furniture/MopAndBucket.png
+Bench 1
+192 1856
+320 64
+../assets/image_assets/Furniture/CafeteriaBench.png
+Bench 2
+512 1856
+320 64
+../assets/image_assets/Furniture/CafeteriaBench.png
+Bench 3
+192 2048
+320 64
+../assets/image_assets/Furniture/CafeteriaBench.png
+Bench 4
+512 2048
+320 64
+../assets/image_assets/Furniture/CafeteriaBench.png
+Bench 5
+704 640
+320 64
+../assets/image_assets/Furniture/CafeteriaBench.png
+Bench 6
+704 832
+320 64
+../assets/image_assets/Furniture/CafeteriaBench.png
+Bench 7
+1216 640
+320 64
+../assets/image_assets/Furniture/CafeteriaBench.png
+Bench 8
+1216 832
+320 64
+../assets/image_assets/Furniture/CafeteriaBench.png
+cafTable 1
+192 1920
+320 128
+../assets/image_assets/Furniture/CafeteriaTable.png
+cafTable 2
+512 1920
+320 128
+../assets/image_assets/Furniture/CafeteriaTable.png
+cafTable 3
+704 704
+320 128
+../assets/image_assets/Furniture/CafeteriaTable.png
+cafTable 4
+1216 704
+320 128
+../assets/image_assets/Furniture/CafeteriaTable.png
+ServingTable 1
+192 1600
+320 128
+../assets/image_assets/Furniture/ServingTable.png
+ServingTable 2
+512 1600
+320 128
+../assets/image_assets/Furniture/ServingTable.png
+Visitation 1
+2240 1600
+192
+../assets/image_assets/Furniture/VisitorsTable.png
+Visitation 2
+2240 1792
+192
+../assets/image_assets/Furniture/VisitorsTable.png
+Visitation 3
+2240 1984
+192
+../assets/image_assets/Furniture/VisitorsTable.png
+Workbench 1
+1664 2688
+128 128
+../assets/image_assets/Furniture/WorkBench.png
+Workbench 2
+1664 2880
+128 128
+../assets/image_assets/Furniture/WorkBench.png
+ToolsCabinet 1
+1792 2496
+128 128
+../assets/image_assets/Furniture/ToolsCabinet.png
+ToolsCabinet 2
+1920 2496
+128 128
+../assets/image_assets/Furniture/ToolsCabinet.png
+Sander 1
+2048 2496
+128 128
+../assets/image_assets/Furniture/Sander.png
+Sander 2
+2240 2496
+128 128
+../assets/image_assets/Furniture/Sander.png
+Dumpster 1
+2304 2944
+128 128
+../assets/image_assets/Furniture/Dumpster.png
+Dumpster 2
+2048 2944
+128 128
+../assets/image_assets/Furniture/Dumpster.png
+Jigsaw 1
+2688 2496
+128 128
+../assets/image_assets/Furniture/JigSaw.png
+Jigsaw 2
+2432 2496
+128 128
+../assets/image_assets/Furniture/JigSaw.png
+Timber 1
+2560 2816
+256 256
+../assets/image_assets/Furniture/TimberStorage.png
+WardenDesk 1
+2624 1152
+192 192
+../assets/image_assets/Furniture/WardenDesk.png
+
+
+
+
+

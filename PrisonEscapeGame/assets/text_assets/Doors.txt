@@ -1,0 +1,161 @@
+Number of furniture: 32
+cell Door 1
+736 416
+64 64
+0
+../assets/image_assets/Doors/cellDoor.png
+cell Door 2
+1056 416 
+64 64 
+0 
+../assets/image_assets/Doors/cellDoor.png
+cell Door 3
+1376 416
+64 64
+0
+../assets/image_assets/Doors/cellDoor.png
+cell Door 4
+1696 416
+64 64
+0
+../assets/image_assets/Doors/cellDoor.png
+cell Door 5
+2016 416
+64 64
+0
+../assets/image_assets/Doors/cellDoor.png
+Average Door 1
+544 672
+64 64
+90
+../assets/image_assets/Doors/averageDoor.png
+Average Door 2
+160 1568
+64 64
+0
+../assets/image_assets/Doors/averageDoor.png
+Average Door 3
+864 1568
+64 64
+0
+../assets/image_assets/Doors/averageDoor.png
+Average Door 4
+160 2208
+64 64
+0
+../assets/image_assets/Doors/averageDoor.png
+Average Door 5
+1760 3744
+64 64
+0
+../assets/image_assets/Doors/averageDoor.png
+Average Door 6
+2720 3744
+64 64
+0
+../assets/image_assets/Doors/averageDoor.png
+Solitary Door 1
+2144 1120
+64 64
+90
+../assets/image_assets/Doors/solitaryDoor.png
+Solitary Door 2
+2400 1312
+64 64
+90
+../assets/image_assets/Doors/solitaryDoor.png
+Solitary Door 3
+160 4192
+64 64
+0
+../assets/image_assets/Doors/solitaryDoor.png
+Solitary Door 4
+416 4192
+64 64
+0
+../assets/image_assets/Doors/solitaryDoor.png
+Solitary Door 5
+672 4192
+64 64
+0
+../assets/image_assets/Doors/solitaryDoor.png
+Solitary Door 6
+928 4192
+64 64
+0
+../assets/image_assets/Doors/solitaryDoor.png
+Solitary Door 7
+1184 4192
+64 64
+0
+../assets/image_assets/Doors/solitaryDoor.png
+Solitary Door 8
+1440 4192
+64 64
+0
+../assets/image_assets/Doors/solitaryDoor.png
+Solitary Door 9
+2848 2336
+64 64
+90
+../assets/image_assets/Doors/solitaryDoor.png
+Solitary Door 10
+2848 3616
+64 64
+90
+../assets/image_assets/Doors/solitaryDoor.png
+Security Door 1
+160 2464
+64 64
+0
+../assets/image_assets/Doors/securityDoor.png
+Security Door 2
+160 3936
+64 64
+0
+../assets/image_assets/Doors/securityDoor.png
+Security Door 3
+1184 1568
+64 64
+0
+../assets/image_assets/Doors/securityDoor.png
+Security Door 4
+1184 2208
+64 64
+0
+../assets/image_assets/Doors/securityDoor.png
+Security Door 5
+1376 3808
+64 64
+90
+../assets/image_assets/Doors/securityDoor.png
+Security Door 6
+1760 2464
+64 64
+0
+../assets/image_assets/Doors/securityDoor.png
+Security Door 7
+1760 2208
+64 64
+0
+../assets/image_assets/Doors/securityDoor.png
+Security Door 8
+1760 3488
+64 64
+0
+../assets/image_assets/Doors/securityDoor.png
+Security Door 9
+2144 3488
+64 64
+0
+../assets/image_assets/Doors/securityDoor.png
+Security Door 10
+2400 352
+64 64
+90
+../assets/image_assets/Doors/securityDoor.png
+Security Door 11
+2400 800
+64 64
+90
+../assets/image_assets/Doors/securityDoor.png

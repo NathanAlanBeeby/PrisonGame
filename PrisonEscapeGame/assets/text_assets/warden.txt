@@ -1,0 +1,6 @@
+Number of warden: 1
+nurse 1
+2560 1280
+32 32
+../assets/image_assets/characters/warden_images.png
+

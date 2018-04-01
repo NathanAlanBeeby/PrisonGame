@@ -1,0 +1,49 @@
+Number of InvItems: 16
+Lighter
+40 45
+..\assets\image_assets\Items\Lighter.png
+Matches
+40 45
+..\assets\image_assets\Items\Matches.png
+ScrapMetal
+40 45
+..\assets\image_assets\Items\ScrapMetal.png
+ScrapPaper
+40 45
+..\assets\image_assets\Items\ScrapPaper.png
+Wood
+40 45
+..\assets\image_assets\Items\Wood.png
+Lighter
+40 45
+..\assets\image_assets\Items\Lighter.png
+Matches
+40 45
+..\assets\image_assets\Items\Matches.png
+ScrapMetal
+40 45
+..\assets\image_assets\Items\ScrapMetal.png
+ScrapPaper
+40 45
+..\assets\image_assets\Items\ScrapPaper.png
+Wood
+40 45
+..\assets\image_assets\Items\Wood.png
+Lighter
+40 45
+..\assets\image_assets\Items\Lighter.png
+Matches
+40 45
+..\assets\image_assets\Items\Matches.png
+ScrapMetal
+40 45
+..\assets\image_assets\Items\ScrapMetal.png
+ScrapPaper
+40 45
+..\assets\image_assets\Items\ScrapPaper.png
+Wood
+40 45
+..\assets\image_assets\Items\Wood.png
+Key
+40 45
+..\assets\image_assets\Items\Key.png

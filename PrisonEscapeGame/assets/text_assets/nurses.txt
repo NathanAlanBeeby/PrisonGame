@@ -1,0 +1,9 @@
+Number of nurses: 2
+nurse 1
+2560 320
+32 32
+../assets/image_assets/characters/nurse_images.png
+nurse 2
+2560 640
+32 32
+../assets/image_assets/characters/nurse_images.png
