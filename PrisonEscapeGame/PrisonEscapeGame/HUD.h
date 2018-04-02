@@ -12,6 +12,7 @@ public:
 	
 	std::vector<sf::RectangleShape> InvSlot;
 	std::vector<sf::RectangleShape> EmptySlot;
+	std::vector<sf::Texture> EmptyTexture;
 
 	bool yardTime, chowTime, showerTime, workTime, freeTime, bedTime;
 

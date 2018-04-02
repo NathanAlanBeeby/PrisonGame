@@ -38,7 +38,7 @@ public:
 
 	void Talk(sf::View &view, sf::RenderWindow &window);
 	void Snitch(sf::View &view, sf::RenderWindow &window);
-	void Mission(sf::View &view, sf::RenderWindow &window);
+	void Mission(sf::View &view, sf::RenderWindow &window, HUD &hud);
 	void dialogueHandler(sf::View &view, sf::RenderWindow &window, HUD &hud);
 
 	sf::Text TalkDialogue, missionDialogue;

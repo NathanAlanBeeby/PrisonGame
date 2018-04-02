@@ -254,7 +254,7 @@ void prisonerDialogue::Mission(sf::View &view, sf::RenderWindow &window, HUD &hu
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 		std::cout << "Mission Accepted:" << missionsInt << std::endl; // use this for trade functionality later, give positive rep to player for accepting
 		prisonerDState = prisonerDialogueMenu;
-		hud.missions.push_back(missions[missionsInt]);
+		hud.missions.push_back(missions [missionsInt]);
 		std::cout << "Mission Accepted: " << missionsInt << std::endl;
 		dialogueCheck = false;
 	}

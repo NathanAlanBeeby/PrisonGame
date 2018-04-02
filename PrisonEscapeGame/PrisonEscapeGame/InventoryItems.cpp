@@ -99,7 +99,7 @@ void InventoryItems::prepare2x2Items(sf::View &view) {
 
 	
 }
-
+std::vector<sf::Texture> texture;
 
  // tutorial on how to map view to window so no conversion errors - https://www.sfml-dev.org/tutorials/2.4/graphics-view.php - 01/04/2018 - 03:17
 void InventoryItems::draw2x2Items(sf::View &view, sf::RenderWindow &window, HUD &hud) {
@@ -119,7 +119,10 @@ void InventoryItems::draw2x2Items(sf::View &view, sf::RenderWindow &window, HUD 
 				if (worldPos.y >= Items2by2[i].getPosition().y && worldPos.y <= Items2by2[i].getPosition().y + Items2by2[i].getSize().y) {
 					std::cout << "This is Item: " << i << std::endl; // use this method to get the item to inventory
 					if (hud.EmptySlot.size() < 8) {
+						
 						hud.EmptySlot.push_back(Items2by2[i]); // sending the item to the player inventory
+						
+						hud.EmptyTexture.push_back(inventoryTexture[ItemRand2x2[i]]);
 					}
 					else {
 						std::cout << "Too many items in inventory!" << std::endl;
@@ -197,6 +200,7 @@ void InventoryItems::draw5x2Items(sf::View &view, sf::RenderWindow &window, HUD 
 					std::cout << "This is Item: " << i << std::endl; // use this method to get the item to inventory
 					if (hud.EmptySlot.size() < 8) {
 						hud.EmptySlot.push_back(Items5by2[i]); // sending the item to the player inventory
+						hud.EmptyTexture.push_back(inventoryTexture[ItemRand5x2[i]]);
 					}
 					else {
 						std::cout << "Too many items in inventory!" << std::endl;
@@ -229,6 +233,7 @@ void InventoryItems::draw4x4Items(sf::View &view, sf::RenderWindow &window, HUD 
 						std::cout << "This is Item: " << i << std::endl; // use this method to get the item to inventory
 						if (hud.EmptySlot.size() < 8) {
 							hud.EmptySlot.push_back(Items4by4[i]); // sending the item to the player inventory
+							hud.EmptyTexture.push_back(inventoryTexture[ItemRand4x4[i]]);
 						}
 						else {
 							std::cout << "Too many items in inventory!" << std::endl;

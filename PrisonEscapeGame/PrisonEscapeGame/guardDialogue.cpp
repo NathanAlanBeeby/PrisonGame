@@ -176,7 +176,7 @@ void guardDialogue::Snitch(sf::View &view, sf::RenderWindow &window){
 
 }
 
-void guardDialogue::Mission(sf::View &view, sf::RenderWindow &window){
+void guardDialogue::Mission(sf::View &view, sf::RenderWindow &window, HUD &hud){
 	
 	if (!acceptTexture.loadFromFile("../assets/image_assets/acceptButton.png")) {
 		std::cout << "Load fail Error on playerFaceTexture" << std::endl;
@@ -219,6 +219,7 @@ void guardDialogue::Mission(sf::View &view, sf::RenderWindow &window){
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 		std::cout << "Mission Accepted" << std::endl; // use this for trade functionality later, give positive rep to player for accepting
 		guardDState = guardDialogueMenu;
+		hud.missions.push_back(guardmissions[missionsInt]);
 		dialogueCheck = false;
 		
 	}
@@ -306,7 +307,7 @@ void guardDialogue::dialogueHandler(sf::View &view, sf::RenderWindow &window, HU
 		}
 		if (guardDState == guardMissions) {
 			drawDialogueBox(view, window);
-			Mission(view, window);
+			Mission(view, window, hud);
 
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {

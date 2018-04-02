@@ -189,7 +189,7 @@ int main()
 				for (int j = 0; j < prisoner.prisoners.size(); j++) {
 					if (prisoner.prisoners[j].getGlobalBounds().intersects(walls.Walls[i].getGlobalBounds())) {
 						std::cout << "prisoner Collision made with wall: " << i << std::endl;
-						prisoner.CollisionResponse(); // stops player movement
+						prisoner.CollisionResponse(j); // stops player movement
 						
 					}
 				}
@@ -237,7 +237,7 @@ int main()
 				for (int j = 0; j < prisoner.prisoners.size(); j++) {
 					if (prisoner.prisoners[j].getGlobalBounds().intersects(skillitems.skillItems[i].getGlobalBounds())) {
 						std::cout << "prisoner Collision made with skill item: " << i << std::endl;
-						prisoner.CollisionResponse(); // stops player movement
+						prisoner.CollisionResponse(j); // stops player movement
 
 					}
 				}
@@ -281,7 +281,7 @@ int main()
 				for (int j = 0; j < prisoner.prisoners.size(); j++) {
 					if (prisoner.prisoners[j].getGlobalBounds().intersects(doors.doors[i].getGlobalBounds())) {
 						std::cout << "prisoner Collision made with door: " << i << std::endl;
-						prisoner.CollisionResponse(); // stops player movement
+						prisoner.CollisionResponse(j); // stops player movement
 
 					}
 				}
@@ -349,7 +349,7 @@ int main()
 				for (int j = 0; j < prisoner.prisoners.size(); j++) {
 					if (prisoner.prisoners[j].getGlobalBounds().intersects(furniture.furniture[i].getGlobalBounds())) {
 						std::cout << "prisoner Collision made with furniture piece: " << i << std::endl;
-						prisoner.CollisionResponse(); // stops player movement
+						prisoner.CollisionResponse(j); // stops player movement
 
 					}
 				}
@@ -378,6 +378,7 @@ int main()
 
 			for (int i = 0; i < prisoner.prisoners.size(); i++) {
 				if (player.characterSprite.getGlobalBounds().intersects(prisoner.prisoners[i].getGlobalBounds())) {
+					prisoner.CollisionResponse(i);
 					player.CollisionResponse();
 					if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
 						prisonD.dialogueCheck = true;
@@ -385,6 +386,7 @@ int main()
 					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 						std::cout << "prisoner Hit" << std::endl;
 						prisoner.prisonerAttacked = true;
+						prisoner.PrisonerAttackedChoice(i); // telling the prisoner class who was attacked
 						prisoner.prisonerHealth -= 10; // temporary value until strength and skills are implemented
 						hud.prisonerRep -= 10;
 						sfx.punchEffect(options);

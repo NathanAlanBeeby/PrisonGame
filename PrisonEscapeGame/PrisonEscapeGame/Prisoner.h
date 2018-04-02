@@ -23,11 +23,11 @@ public:
 	
 
 	sf::Vector2i wayPoint;
-	prisonerState PState = IDLE;
+	prisonerState PState;
 
 	float moveSpeed = 0.15;
-	sf::Vector2f vel;
-	sf::Vector2f lastVelocity;
+	std::vector<sf::Vector2f> vel;
+	std::vector<sf::Vector2f> lastVelocity;
 
 
 	sf::Vector2f getPosition() {
@@ -37,8 +37,8 @@ public:
 	}
 
 	int prisonRand;
-
-	void CollisionResponse();
+	int PrisonNumAngry;
+	void CollisionResponse(int prisonerNum);
 
 
 	//void Collision(sf::Vector2f prisonerPosition, sf::Vector2f Size);
@@ -56,6 +56,8 @@ public:
 	void Wandering(HUD &hud);
 	void pathFollowing(HUD &hud);
 	void prisonerAttack(Player &player);
+
+	void PrisonerAttackedChoice(int &prisoner);
 
 	
 };

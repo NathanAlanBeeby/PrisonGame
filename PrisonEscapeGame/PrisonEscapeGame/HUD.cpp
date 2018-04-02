@@ -378,6 +378,7 @@ void HUD::craftButtonClicked() {
 		}
 		for (int i = 0; i < EmptySlot.size(); i++) {
 			EmptySlot[i].setPosition(InvSlot[i].getPosition().x, InvSlot[i].getPosition().y);
+			EmptySlot[i].setTexture(&EmptyTexture[i]); // setting the texture to the texture set in the inventory items class
 			window.draw(EmptySlot[i]);
 		}
 
