@@ -5,9 +5,6 @@
 Menu::Menu(float width, float height)
 {
 	
-	//set the background, draw it out
-
-
 	if (!font.loadFromFile("../assets/text_assets/FontFile.ttf"))
 	{
 		// error...

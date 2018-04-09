@@ -34,6 +34,9 @@
     <Filter Include="Source Files\HUDItems\HUD%27s">
       <UniqueIdentifier>{16c03c57-48fe-4b6a-aed5-d2ba38df6913}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\PathFinding">
+      <UniqueIdentifier>{931fa6e4-2d05-4174-8514-9f2f72c41c40}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -95,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="InventoryItems.cpp">
       <Filter>Source Files\HUDItems\HUD%27s</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOver.cpp">
+      <Filter>Source Files\Menus</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +166,12 @@
     </ClInclude>
     <ClInclude Include="InventoryItems.h">
       <Filter>Source Files\HUDItems\HUD%27s</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>Source Files\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

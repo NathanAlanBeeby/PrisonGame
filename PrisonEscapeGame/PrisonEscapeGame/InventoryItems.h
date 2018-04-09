@@ -13,12 +13,16 @@ public:
 	
 	float InvX, InvY; // position X and Y
 	InventoryItems(std::string inventoryFile, sf::RenderWindow &window);
+	
+	int inv2by2Size, inv5by2Size, inv4by4Size = 0;
 
 	std::vector<sf::RectangleShape> Items2by2; // 4
 	std::vector<sf::RectangleShape> Items5by2; // 10
 	std::vector<sf::RectangleShape> Items4by4; // 16
+	sf::RectangleShape item;
 
-	int inv2by2Size, inv5by2Size, inv4by4Size = 0; // temporary value to count the amount of items
+
+
 
 
 

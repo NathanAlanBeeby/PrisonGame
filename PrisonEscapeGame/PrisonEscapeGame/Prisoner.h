@@ -1,14 +1,14 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "HUD.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
 #include "Player.h"
-
+#include "HUD.h"
 enum prisonerState { IDLE, PathFollow, prisonerAngry }; // moving idly, walking to destination, and chasing the player
+
 
 class Prisoner
 {
@@ -25,7 +25,7 @@ public:
 	sf::Vector2i wayPoint;
 	prisonerState PState;
 
-	float moveSpeed = 0.15;
+	float moveSpeed = 5.5;
 	std::vector<sf::Vector2f> vel;
 	std::vector<sf::Vector2f> lastVelocity;
 
@@ -42,7 +42,7 @@ public:
 
 
 	//void Collision(sf::Vector2f prisonerPosition, sf::Vector2f Size);
-	float Speed = 15;
+	//float Speed = 15;
 	sf::Clock PrisonClock;
 	int prisonTime = 0;
 	int PrisonMove = 0; 
@@ -55,7 +55,7 @@ public:
 	void prisonerState();
 	void Wandering(HUD &hud);
 	void pathFollowing(HUD &hud);
-	void prisonerAttack(Player &player);
+	void prisonerAttack(HUD &hud, Player &player);
 
 	void PrisonerAttackedChoice(int &prisoner);
 

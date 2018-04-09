@@ -90,6 +90,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)/../External libraries/SFML/include;$(SolutionDir)/../External libraries/Box2D/include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -159,6 +160,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Doors.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="guardDialogue.cpp" />
     <ClCompile Include="Furniture.cpp" />
     <ClCompile Include="furnitureInv.cpp" />
@@ -182,6 +184,7 @@
   <ItemGroup>
     <ClInclude Include="Background.h" />
     <ClInclude Include="Doors.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="guardDialogue.h" />
     <ClInclude Include="Furniture.h" />
     <ClInclude Include="furnitureInv.h" />
@@ -191,6 +194,7 @@
     <ClInclude Include="InventoryItems.h" />
     <ClInclude Include="mapLoader.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Nurse.h" />
     <ClInclude Include="OptionsMenu.h" />
     <ClInclude Include="Player.h" />

@@ -22,20 +22,16 @@
 #include "guardDialogue.h"
 #include "SFX.h"
 #include "InventoryItems.h"
+#include "GameOver.h"
 
 /*TODO - 
-
-Mouse Handler: Implement Mouse Input on Instructions Menu and fix mouse and key input skipping menu's 
-On Key/Mouse Input: Fix error with changing state
-
-
-HUDItems: Finish the Instructions Menu, Crafting menu needs to be implemented, MouseHander for HUDItems, including start menu
-Objects: Make Skill Item furniture increment skill on use
-AI: Path Finding Algorithm A* - Use on all characters, use the given states in the class to change their behavior
+HUDItems: Crafting menu needs to be implemented, trading needs to be implemented
+Objects: Create Mini-Game for Skill Items
+AI: Path Finding Algorithm A* - Use on all characters, use the given states in the class to change their behavior _ PATH FOLLOW and PLAYER FOLLOW (make sure collision works on it)
 */
 
 
-enum GameState { StartMenu, SkillsMenu, Options, Game, InstructionsMenu };
+enum GameState { StartMenu, SkillsMenu, Options, Game, InstructionsMenu, GameOverMenu };
 enum InvState {LockerInv,  BinInv, FtLockerInv, DeskInv, TlsCbInv, DumpsterInv, noState};
 enum skillItemsMenu { weightsMenu, bikeMenu, bookshelfMenu, noMenu };
 int GameState = StartMenu;
@@ -59,7 +55,6 @@ int main()
 
 	InvState invS;
 	skillItemsMenu skills;
-
 	mapLoader map;
 	prisonerDialogue prisonD;
 	guardDialogue guardD;
@@ -68,11 +63,11 @@ int main()
 	furnitureInv furninv;
 
 	//MENU'S
-	Menu menu(window.getSize().x, window.getSize().y); // creating the start menu
-	OptionsMenu options(window.getSize().x, window.getSize().y); // crating the options menu 
+	Menu menu(window.getSize().x, window.getSize().y);
+	OptionsMenu options(window.getSize().x, window.getSize().y);
 	Instructions instructions(window.getSize().x, window.getSize().y); 
-	SkillMenu skillmenu(window.getSize().x, window.getSize().y); // creating the Skill menu
-
+	SkillMenu skillmenu(window.getSize().x, window.getSize().y); 
+	
 	//Loading in Menu music
 	if (!menuMusic.openFromFile("../assets/sound_assets/Music/BlueHighway.ogg")) { 
 		std::cout << "Background music not loaded" << std::endl;
@@ -100,12 +95,51 @@ int main()
 	Background OptionsBackground("../assets/image_assets/OptionsBackground.png");
 	Background InstructionsBackground("../assets/image_assets/InstructionsBackground.png");
 	
+	
 	//Collidable Furniture
 	Doors doors(doorFile, window);
 	Furniture furniture(furnitureFile, window);
 	prisonWalls walls(wallFile, window);
 	SkillItems skillitems(skillsFile, window);
 
+	// Set Map Nodes passability
+	// for each door, furniture, prisonwall
+	// Find corresponding Node
+	// Set passable 0
+
+	for (int i = 0; i < doors.doors.size(); i++) {
+		for (int x = 0; x < map.loadCount.x; x++) {
+			for (int y = 0; y < map.loadCount.y; y++) {
+				if (doors.doors[i].getPosition().x <= x * 64 && doors.doors[i].getPosition().x >= x * 64 + 64) {
+					if (doors.doors[i].getPosition().y <= y * 64 && doors.doors[i].getPosition().y >= y * 64 + 64) {
+						map.nodes[x][y].passable = false;
+					}
+				}
+			}
+		}
+	}
+	for (int i = 0; i < furniture.furniture.size(); i++) {
+		for (int x = 0; x < map.loadCount.x; x++) {
+			for (int y = 0; y < map.loadCount.y; y++) {
+				if (furniture.furniture[i].getPosition().x <= x * 64 && furniture.furniture[i].getPosition().x >= x * 64 + 64) {
+					if (furniture.furniture[i].getPosition().y <= y * 64 && furniture.furniture[i].getPosition().y >= y * 64 + 64) {
+						map.nodes[x][y].passable = false;
+					}
+				}
+			}
+		}
+	}
+	for (int i = 0; i < walls.Walls.size(); i++) {
+		for (int x = 0; x < map.loadCount.x; x++) {
+			for (int y = 0; y < map.loadCount.y; y++) {
+				if (walls.Walls[i].getPosition().x <= x * 64 && walls.Walls[i].getPosition().x >= x * 64 + 64) {
+					if (walls.Walls[i].getPosition().y <= y * 64 && walls.Walls[i].getPosition().y >= y * 64 + 64) {
+						map.nodes[x][y].passable = false;
+					}
+				}
+			}
+		}
+	}
 
 	//Characters (player and AI)
 	Player player(sf::Vector2f(32,32), sf::Vector2f(150, 150));
@@ -115,6 +149,7 @@ int main()
 	Nurse nurse(nurseFile, window);
 	InventoryItems invItems(inventoryFile, window);
 
+	GameOver gameover;
 
 	invS = noState;
 	skills = noMenu;
@@ -130,6 +165,8 @@ int main()
 
 	while (window.isOpen())
 	{
+
+
 		// use window events for keyboard input, so that the gamestates dont switch
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -157,7 +194,9 @@ int main()
 				else if (GameState == Game) {
 					hud.HUDUserInput(view, window);
 				}
-				
+				else if (GameState == GameOverMenu) {
+					gameover.KeyHandler();
+				}
 				break;
 			case sf::Event::MouseButtonPressed:
 				if (GameState == StartMenu) {
@@ -182,34 +221,34 @@ int main()
 		if(GameState == Game){
 			for (int i = 0; i < walls.Walls.size(); i++) {
 				if (player.characterSprite.getGlobalBounds().intersects(walls.Walls[i].getGlobalBounds())) {
-					std::cout << "player Collision made with wall: " << i << std::endl;
+				//	std::cout << "player Collision made with wall: " << i << std::endl;
 					player.CollisionResponse(); // stops player movement
 					sfx.collisionEffect(options);
 				}
 				for (int j = 0; j < prisoner.prisoners.size(); j++) {
 					if (prisoner.prisoners[j].getGlobalBounds().intersects(walls.Walls[i].getGlobalBounds())) {
-						std::cout << "prisoner Collision made with wall: " << i << std::endl;
+						//std::cout << "prisoner Collision made with wall: " << i << std::endl;
 						prisoner.CollisionResponse(j); // stops player movement
 						
 					}
 				}
 				for (int j = 0; j < guard.guards.size(); j++) {
 					if (guard.guards[j].getGlobalBounds().intersects(walls.Walls[i].getGlobalBounds())) {
-						std::cout << "guard Collision made with wall: " << i << std::endl;
+						//std::cout << "guard Collision made with wall: " << i << std::endl;
 						guard.CollisionResponse(); // stops player movement
 
 					}
 				}
 				for (int j = 0; j < nurse.nurses.size(); j++) {
 					if (nurse.nurses[j].getGlobalBounds().intersects(walls.Walls[i].getGlobalBounds())) {
-						std::cout << "nurse Collision made with wall: " << i << std::endl;
+						//std::cout << "nurse Collision made with wall: " << i << std::endl;
 						nurse.CollisionResponse(); // stops player movement
 
 					}
 				}
 				for (int j = 0; j < warden.Wardens.size(); j++) {
 					if (warden.Wardens[j].getGlobalBounds().intersects(walls.Walls[i].getGlobalBounds())) {
-						std::cout << "warden Collision made with wall: " << i << std::endl;
+						//std::cout << "warden Collision made with wall: " << i << std::endl;
 						warden.CollisionResponse(); // stops player movement
 
 					}
@@ -217,7 +256,7 @@ int main()
 			}
 			for (int i = 0; i < skillitems.skillItems.size(); i++) {
 				if (player.characterSprite.getGlobalBounds().intersects(skillitems.skillItems[i].getGlobalBounds())) {
-					std::cout << "Collision made with SkillItem: " << i << std::endl;
+					//std::cout << "Collision made with SkillItem: " << i << std::endl;
 					player.CollisionResponse(); // stops player movement
 					if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
 						if (i <= 5) {
@@ -236,28 +275,28 @@ int main()
 				}
 				for (int j = 0; j < prisoner.prisoners.size(); j++) {
 					if (prisoner.prisoners[j].getGlobalBounds().intersects(skillitems.skillItems[i].getGlobalBounds())) {
-						std::cout << "prisoner Collision made with skill item: " << i << std::endl;
+					//	std::cout << "prisoner Collision made with skill item: " << i << std::endl;
 						prisoner.CollisionResponse(j); // stops player movement
 
 					}
 				}
 				for (int j = 0; j < guard.guards.size(); j++) {
 					if (guard.guards[j].getGlobalBounds().intersects(skillitems.skillItems[i].getGlobalBounds())) {
-						std::cout << "guard Collision made with skill item: " << i << std::endl;
+					//	std::cout << "guard Collision made with skill item: " << i << std::endl;
 						guard.CollisionResponse(); // stops player movement
 
 					}
 				}
 				for (int j = 0; j < nurse.nurses.size(); j++) {
 					if (nurse.nurses[j].getGlobalBounds().intersects(skillitems.skillItems[i].getGlobalBounds())) {
-						std::cout << "nurse Collision made with skill item: " << i << std::endl;
+					//	std::cout << "nurse Collision made with skill item: " << i << std::endl;
 						nurse.CollisionResponse(); // stops player movement
 
 					}
 				}
 				for (int j = 0; j < warden.Wardens.size(); j++) {
 					if (warden.Wardens[j].getGlobalBounds().intersects(skillitems.skillItems[i].getGlobalBounds())) {
-						std::cout << "warden Collision made with skill item: " << i << std::endl;
+					//	std::cout << "warden Collision made with skill item: " << i << std::endl;
 						warden.CollisionResponse(); // stops player movement
 						
 					}
@@ -266,7 +305,7 @@ int main()
 
 			for (int i = 0; i < doors.doors.size(); i++) {
 				if (player.characterSprite.getGlobalBounds().intersects(doors.doors[i].getGlobalBounds())) {
-					std::cout << "Collision made with door: " << i << std::endl;
+					//std::cout << "Collision made with door: " << i << std::endl;
 					player.CollisionResponse();// stops player movement
 					sfx.openDoorEffect(options);
 					
@@ -280,28 +319,28 @@ int main()
 				}
 				for (int j = 0; j < prisoner.prisoners.size(); j++) {
 					if (prisoner.prisoners[j].getGlobalBounds().intersects(doors.doors[i].getGlobalBounds())) {
-						std::cout << "prisoner Collision made with door: " << i << std::endl;
+					//	std::cout << "prisoner Collision made with door: " << i << std::endl;
 						prisoner.CollisionResponse(j); // stops player movement
 
 					}
 				}
 				for (int j = 0; j < guard.guards.size(); j++) {
 					if (guard.guards[j].getGlobalBounds().intersects(doors.doors[i].getGlobalBounds())) {
-						std::cout << "guard Collision made with door: " << i << std::endl;
+						//std::cout << "guard Collision made with door: " << i << std::endl;
 						guard.CollisionResponse(); // stops player movement
 
 					}
 				}
 				for (int j = 0; j < nurse.nurses.size(); j++) {
 					if (nurse.nurses[j].getGlobalBounds().intersects(doors.doors[i].getGlobalBounds())) {
-						std::cout << "nurse Collision made with door: " << i << std::endl;
+						//std::cout << "nurse Collision made with door: " << i << std::endl;
 						nurse.CollisionResponse(); // stops player movement
 
 					}
 				}
 				for (int j = 0; j < warden.Wardens.size(); j++) {
 					if (warden.Wardens[j].getGlobalBounds().intersects(doors.doors[i].getGlobalBounds())) {
-						std::cout << "warden Collision made with door: " << i << std::endl;
+						//std::cout << "warden Collision made with door: " << i << std::endl;
 						warden.CollisionResponse(); // stops player movement
 
 					}
@@ -348,28 +387,28 @@ int main()
 				}
 				for (int j = 0; j < prisoner.prisoners.size(); j++) {
 					if (prisoner.prisoners[j].getGlobalBounds().intersects(furniture.furniture[i].getGlobalBounds())) {
-						std::cout << "prisoner Collision made with furniture piece: " << i << std::endl;
+					//	std::cout << "prisoner Collision made with furniture piece: " << i << std::endl;
 						prisoner.CollisionResponse(j); // stops player movement
 
 					}
 				}
 				for (int j = 0; j < guard.guards.size(); j++) {
 					if (guard.guards[j].getGlobalBounds().intersects(furniture.furniture[i].getGlobalBounds())) {
-						std::cout << "guard Collision made with furniture piece: " << i << std::endl;
+					//	std::cout << "guard Collision made with furniture piece: " << i << std::endl;
 						guard.CollisionResponse(); // stops player movement
 
 					}
 				}
 				for (int j = 0; j < nurse.nurses.size(); j++) {
 					if (nurse.nurses[j].getGlobalBounds().intersects(furniture.furniture[i].getGlobalBounds())) {
-						std::cout << "nurse Collision made with furniture piece: " << i << std::endl;
+					//	std::cout << "nurse Collision made with furniture piece: " << i << std::endl;
 						nurse.CollisionResponse(); // stops player movement
 
 					}
 				}
 				for (int j = 0; j < warden.Wardens.size(); j++) {
 					if (warden.Wardens[j].getGlobalBounds().intersects(furniture.furniture[i].getGlobalBounds())) {
-						std::cout << "warden Collision made with furniture piece: " << i << std::endl;
+					//	std::cout << "warden Collision made with furniture piece: " << i << std::endl;
 						warden.CollisionResponse(); // stops player movement
 
 					}
@@ -533,10 +572,18 @@ int main()
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) { // simple button click to close all states
 				invS = noState;
 				skills = noMenu;
+			} 
+			if (hud.healthBar <= 0) {
+				GameState = GameOverMenu;
+				std::cout << "You were beaten to death" << std::endl;
 			}
+			
 			menuMusic.pause(); // pause that funky music
 		//	background.drawBackground(window);
 			map.drawMap(window);
+
+			
+
 
 			//drawing the walls
 			walls.drawWalls(window);
@@ -601,7 +648,10 @@ int main()
 			
 		}
 
-	
+		if (GameState == GameOverMenu){ // draw Game Over Screen here
+			gameover.drawEndScreen(window, view); // drawing end game screen
+		
+		}
 
 
 	
