@@ -9,7 +9,7 @@ class HUD
 
 public:
 
-	
+
 	std::vector<sf::RectangleShape> InvSlot;
 	std::vector<sf::RectangleShape> EmptySlot;
 	std::vector<sf::Texture> EmptyTexture;
@@ -20,7 +20,7 @@ public:
 
 
 	int missionList;
-	
+
 	sf::CircleShape PlayerIcon;
 
 	sf::RectangleShape clockOuterBox, clockDigital, date, routineBox;
@@ -59,19 +59,19 @@ public:
 	float maxXP = 210; //create a system where the maxXP costs more each level of the players health
 	int playerLevel = 1; // (maxXP * playerLevel) + or * someValue so that each level is harder than the last
 
-	
+
 	int MisOpenCount = 0; // way of knowing if the player has hit the key twice
 	int InvOpenCount = 0; // way of knowing if the player has hit the key twice
 	int SkilOpenCount = 0; // way of knowing if the player has hit the key twice
 	int RepOpenCount = 0;
 	int craftOpenCount = 0;
-	
+
 
 
 	int HUDTime = 0; // this will be the time for the screen
 	int HUDTimeMinute = 0; // hudtime minutes
 	int day = 0; // the day number
-	
+
 	int prisonMoney = 0; // the cash you start with
 
 
@@ -85,10 +85,10 @@ public:
 	int playerStamina = 0;
 	int playerArmour = 0;
 	int playerCharisma = 0;
-	int playerKnowledge = 0; 
+	int playerKnowledge = 0;
 
-	
-	
+
+
 	HUD();
 
 	void drawMissions(sf::View &view, sf::RenderWindow &window);
@@ -107,5 +107,5 @@ public:
 	void craftingOpening();
 	void craftButtonClicked();
 	void reputationOpening();
-	
+
 };

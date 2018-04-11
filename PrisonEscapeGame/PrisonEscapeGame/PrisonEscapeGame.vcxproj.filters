@@ -34,9 +34,6 @@
     <Filter Include="Source Files\HUDItems\HUD%27s">
       <UniqueIdentifier>{16c03c57-48fe-4b6a-aed5-d2ba38df6913}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\PathFinding">
-      <UniqueIdentifier>{931fa6e4-2d05-4174-8514-9f2f72c41c40}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

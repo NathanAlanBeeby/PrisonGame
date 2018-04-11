@@ -15,8 +15,8 @@ class mapLoader
 {
 public:
 
-	sf::Texture MapTilesTexture;
-	sf::Sprite MapTiles;
+	sf::Texture MapTilesTexture; // texture for the map
+	sf::Sprite MapTiles; // setting a sprite of tiles
 	sf::Vector2i map[100][100]; //map size set to a vector with 2 integers
 	sf::Vector2i loadCount = sf::Vector2i(0, 0); // load counter set to 0,0
 
@@ -33,7 +33,7 @@ public:
 	};
 
 	/*
-	
+
 
 	AStar() {
 		do the a star algorithm with the Nodes array as your source
@@ -81,7 +81,7 @@ public:
 			}
 			loadCount.y++;
 		}
-	}	
+	}
 
 
 
@@ -92,7 +92,7 @@ public:
 			{
 				if (map[i][j].x != -1 && map[i][j].y != -1)
 				{
-					MapTiles.setPosition(i*64,j*64); // setting I and J multiplied of the size of the tiles
+					MapTiles.setPosition(i * 64, j * 64); // setting I and J multiplied of the size of the tiles
 					MapTiles.setTextureRect(sf::IntRect(map[i][j].x * 64, map[i][j].y * 64, 64, 64)); // getting the left, top, width and height
 					window.draw(MapTiles);
 				}
@@ -100,6 +100,6 @@ public:
 		}
 	}
 private:
-	
+
 };
- //https://www.youtube.com/watch?v=O7lVymlZMy0
+//https://www.youtube.com/watch?v=O7lVymlZMy0

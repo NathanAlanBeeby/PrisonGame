@@ -47,7 +47,7 @@ OptionsMenu::~OptionsMenu()
 {
 }
 
-void OptionsMenu::keyHandler(){
+void OptionsMenu::keyHandler() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 		Up();
 		std::cout << "Up Pressed" << std::endl;
@@ -107,14 +107,14 @@ void OptionsMenu::keyHandler(){
 		}
 	}
 }
-void OptionsMenu::instructionsPressed(){
+void OptionsMenu::instructionsPressed() {
 	instrucPress = true;
 }
-void OptionsMenu::backPressed(){ 
-	backPress = true; 
+void OptionsMenu::backPressed() {
+	backPress = true;
 }
 
-void OptionsMenu::mouseHandler(sf::RenderWindow &window){
+void OptionsMenu::mouseHandler(sf::RenderWindow &window) {
 	sf::Vector2i mousePos = ::sf::Mouse::getPosition(window); // getting the position of the mouse relative to the window
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) { // left mouse button
 		if (mousePos.x >= OptionsMenuText[2].getPosition().x && mousePos.x <= OptionsMenuText[2].getPosition().x + 130) { // if the x position is on the first HUD button
@@ -166,7 +166,7 @@ void OptionsMenu::drawBars(sf::RenderWindow &window) {
 	SoundBar.setOutlineColor(sf::Color(0, 0, 0));
 
 
-	
+
 	emptySound.setPosition(250, 100);
 	emptyMusic.setPosition(250, 200);
 

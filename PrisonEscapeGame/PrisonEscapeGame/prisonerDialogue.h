@@ -36,14 +36,14 @@ public:
 	void Trade(sf::View &view, sf::RenderWindow &window);
 	void Mission(sf::View &view, sf::RenderWindow &window, HUD &hud);
 	void dialogueHandler(sf::View &view, sf::RenderWindow &window, HUD &hud);
-	
+
 
 	sf::Text TalkDialogue, missionDialogue;
 	int talkInt, missionsInt;
 
 
 	std::vector<sf::Text>  missions;
-	
+
 
 
 

@@ -10,10 +10,10 @@ class InventoryItems
 public:
 	std::vector<sf::RectangleShape>  InvItems;
 	std::vector<sf::Texture>  inventoryTexture;
-	
+
 	float InvX, InvY; // position X and Y
 	InventoryItems(std::string inventoryFile, sf::RenderWindow &window);
-	
+
 	int inv2by2Size, inv5by2Size, inv4by4Size = 0;
 
 	std::vector<sf::RectangleShape> Items2by2; // 4
@@ -33,7 +33,7 @@ public:
 	void draw5x2Items(sf::View &view, sf::RenderWindow &window, HUD &hud);
 	void draw4x4Items(sf::View &view, sf::RenderWindow &window, HUD &hud);
 
-	
+
 	~InventoryItems();
 };
 

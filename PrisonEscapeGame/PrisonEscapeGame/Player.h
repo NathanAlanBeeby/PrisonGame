@@ -6,7 +6,7 @@
 
 class Player
 {
-	
+
 public:
 
 	sf::Texture spriteTexture;
@@ -16,8 +16,8 @@ public:
 
 	HUD hud;
 	float moveSpeed = 15;
-	
-	
+
+
 	sf::Clock clock;
 	sf::Vector2i ScreenSize;
 
@@ -30,7 +30,7 @@ public:
 	int MisOpenCount = 0; // way of knowing if the player has hit the key twice
 	int InvOpenCount = 0; // way of knowing if the player has hit the key twice
 	int SkilOpenCount = 0; // way of knowing if the player has hit the key twice
-	
+
 	Player(sf::Vector2f size, sf::Vector2f position);
 
 
@@ -40,7 +40,7 @@ public:
 	sf::Vector2f vel;
 
 
-	
+
 
 
 };

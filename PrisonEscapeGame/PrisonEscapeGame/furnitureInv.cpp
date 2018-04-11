@@ -16,11 +16,11 @@ furnitureInv::~furnitureInv()
 }
 
 
-void furnitureInv::Grid2by2(sf::View &view, sf::RenderWindow &window, HUD &hud){
+void furnitureInv::Grid2by2(sf::View &view, sf::RenderWindow &window, HUD &hud) {
 	InventoryItems inv(inventoryFile, window);
 
 
-	std::vector<sf::RectangleShape>  TwoByTwo(4, sf::RectangleShape(gridBox)); 
+	std::vector<sf::RectangleShape>  TwoByTwo(4, sf::RectangleShape(gridBox));
 
 	TwoByTwo[0].setPosition(view.getCenter().x - 64, view.getCenter().y - 64);
 	TwoByTwo[1].setPosition(view.getCenter().x, view.getCenter().y - 64);
@@ -39,7 +39,7 @@ void furnitureInv::Grid2by2(sf::View &view, sf::RenderWindow &window, HUD &hud){
 	inv.draw2x2Items(view, window, hud);
 }
 
-void furnitureInv::Grid5by2(sf::View &view, sf::RenderWindow &window, HUD &hud){
+void furnitureInv::Grid5by2(sf::View &view, sf::RenderWindow &window, HUD &hud) {
 	InventoryItems inv(inventoryFile, window);
 
 
@@ -64,7 +64,7 @@ void furnitureInv::Grid5by2(sf::View &view, sf::RenderWindow &window, HUD &hud){
 	inv.draw5x2Items(view, window, hud);
 }
 
-void furnitureInv::Grid4by4(sf::View &view, sf::RenderWindow &window, HUD &hud){
+void furnitureInv::Grid4by4(sf::View &view, sf::RenderWindow &window, HUD &hud) {
 	InventoryItems inv(inventoryFile, window);
 
 

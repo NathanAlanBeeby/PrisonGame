@@ -30,7 +30,7 @@ Doors::Doors(std::string doorsFile, sf::RenderWindow &window)
 
 		float sizeX, sizeY;
 		float rot; // rotation
-		
+
 
 		for (int i = 0; i < doorsNumber; i++)
 		{
@@ -63,12 +63,12 @@ Doors::Doors(std::string doorsFile, sf::RenderWindow &window)
 			sf::Vector2i pos(doorX, doorY);
 			sf::Vector2f size(sizeX, sizeY);
 
-	
+
 			if (!DoorTexture[i].loadFromFile(doorsPath)) {
 				std::cout << "Load fail Error on DoorsTexture" << std::endl;
 				system("pause");
 			}
-			
+
 
 			doors[i].setPosition(pos.x, pos.y);
 			doors[i].setOrigin(size / 2.0f);
@@ -77,7 +77,7 @@ Doors::Doors(std::string doorsFile, sf::RenderWindow &window)
 			doors[i].setTexture(&DoorTexture[i]);
 
 
-			
+
 		}
 	}
 }

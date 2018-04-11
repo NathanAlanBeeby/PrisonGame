@@ -94,7 +94,7 @@ void SkillItems::knowledgeIncrease(sf::RenderWindow &window, sf::View &view, HUD
 	knowledgeWindow.setOutlineColor(sf::Color(0, 0, 0));
 	knowledgeWindow.setPosition(view.getCenter().x - 125, view.getCenter().y - 130);
 	window.draw(knowledgeWindow);
-	
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && hud.playerKnowledge < 100) { hud.playerKnowledge += 1; }
 
 }

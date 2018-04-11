@@ -47,7 +47,7 @@ prisonWalls::prisonWalls(std::string wallFile, sf::RenderWindow &window)
 			Walls[i].setTexture(&wallTexture);
 			Walls[i].setPosition(pos.x, pos.y);
 
-			
+
 
 		}
 	}

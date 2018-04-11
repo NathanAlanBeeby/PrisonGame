@@ -107,7 +107,7 @@ void Warden::drawWarden(sf::RenderWindow &window) {
 	if (TimeElapsed >= seconds) { // if the time elapsed is a second, increment the HUDTime and restart the HUDClock 
 		WardenTime++;
 		WardenClock.restart();
-	
+
 		std::cout << WardenTime << std::endl;
 	}
 	/*
@@ -161,12 +161,12 @@ void Warden::drawWarden(sf::RenderWindow &window) {
 
 		Wardens[i].setTextureRect(sf::IntRect(WardenAnim.x * 32, WardenAnim.y * 32, 32, 32)); // cropping the image with the position and size of the image 
 
-	
 
-			window.draw(Wardens[i]);
 
-		}
-	
+		window.draw(Wardens[i]);
+
+	}
+
 
 
 }

@@ -76,7 +76,7 @@ void Instructions::draw(sf::RenderWindow &window) {
 	}
 }
 
-void Instructions::keyHandler(){
+void Instructions::keyHandler() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 		Up();
 		std::cout << "Up Pressed" << std::endl;
@@ -90,7 +90,7 @@ void Instructions::keyHandler(){
 		switch (GetPressedItem()) {
 		case 0: std::cout << "Keys" << std::endl;
 			state = keysState;
-			
+
 			break;
 		case 1: std::cout << "Crafting" << std::endl;
 			state = craftState;
@@ -103,7 +103,7 @@ void Instructions::keyHandler(){
 			break;
 		case 4: std::cout << "Back" << std::endl;
 			backPressed();
-			
+
 			break;
 		case 5: std::cout << "Next" << std::endl;
 			//this can have functionality later when more information is needed to be inputted into the instructions menu
@@ -112,7 +112,7 @@ void Instructions::keyHandler(){
 	}
 }
 
-void Instructions::KeysSubMenu(sf::RenderWindow &window){
+void Instructions::KeysSubMenu(sf::RenderWindow &window) {
 	std::cout << "Keys sub menu in action" << std::endl;
 	if (!keysTexture.loadFromFile("../assets/image_assets/KeysMenu.png")) {
 		std::cout << "Load fail Error on keysTexture" << std::endl;
@@ -142,7 +142,7 @@ void Instructions::KeysSubMenu(sf::RenderWindow &window){
 		first3Keys[i].setFont(keyFont);
 		first3Keys[i].setCharacterSize(40); // setting the character size
 		first3Keys[i].setFillColor(sf::Color(0, 0, 0));
-			window.draw(first3Keys[i]);
+		window.draw(first3Keys[i]);
 	}
 
 	KeyInstruction[0].setString("access skills menu in game");
@@ -203,7 +203,7 @@ void Instructions::SkillsSubMenu(sf::RenderWindow &window) {
 	for (int i = 0; i < skillsInstruction.size(); i++) {
 		skillsInstruction[i].setPosition(window.getSize().x / 2 + 130, 50 + (i * 80));
 		skillsInstruction[i].setFont(keyFont);
-		skillsInstruction[i].setCharacterSize(40); 
+		skillsInstruction[i].setCharacterSize(40);
 		skillsInstruction[i].setFillColor(sf::Color(0, 0, 0));
 		window.draw(skillsInstruction[i]);
 	}
@@ -256,7 +256,7 @@ void Instructions::backPressed() {
 }
 
 
-void Instructions::mouseHandler(sf::RenderWindow &window){
+void Instructions::mouseHandler(sf::RenderWindow &window) {
 	sf::Vector2i mousePos = ::sf::Mouse::getPosition(window); // getting the position of the mouse relative to the window
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) { // left mouse button
 		if (mousePos.x >= InstructionsMenuText[4].getPosition().x && mousePos.x <= InstructionsMenuText[4].getPosition().x + 115) { // if the x position is on the first HUD button

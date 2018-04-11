@@ -16,7 +16,7 @@ public:
 
 
 
-	
+
 
 	sf::RectangleShape bin, desk, locker, BigBin, toolsCabinet, footLocker;
 	sf::Texture binTexture, deskTexture, lockerTexture, BigBinTexture, toolsCabinetTexture, footLockerTexture;

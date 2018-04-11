@@ -30,11 +30,11 @@ public:
 	sf::Vector2f lastVelocity;
 
 
-	sf::Vector2f getPosition() { 
+	sf::Vector2f getPosition() {
 		for (int i = 0; i < nurses.size(); i++) {
 			return nurses[i].getPosition();
 		}
-	 }
+	}
 
 
 

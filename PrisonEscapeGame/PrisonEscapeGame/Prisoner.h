@@ -15,12 +15,12 @@ class Prisoner
 public:
 	std::vector<sf::RectangleShape>  prisoners;
 	std::vector<sf::Texture>  prisonerTexture;
-	
+
 	float prisonerX, prisonerY; // position X and Y
 
 	Prisoner(std::string prisonerFile, sf::RenderWindow &window);
 	~Prisoner();
-	
+
 
 	sf::Vector2i wayPoint;
 	prisonerState PState;
@@ -45,10 +45,10 @@ public:
 	//float Speed = 15;
 	sf::Clock PrisonClock;
 	int prisonTime = 0;
-	int PrisonMove = 0; 
+	int PrisonMove = 0;
 	int prisonerHealth = 100;
 	int prisonChoice = 0; // the prisoner thats going to be moved
-	
+
 	bool prisonerAttacked = false;
 
 	void drawPrisoner(sf::RenderWindow &window, HUD &hud, Player &player);
@@ -59,6 +59,6 @@ public:
 
 	void PrisonerAttackedChoice(int &prisoner);
 
-	
+
 };
 

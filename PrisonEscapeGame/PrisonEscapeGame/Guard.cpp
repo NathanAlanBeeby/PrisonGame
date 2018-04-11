@@ -167,12 +167,12 @@ void Guard::drawGuard(sf::RenderWindow &window) {
 		guards[i].setTextureRect(sf::IntRect(GuardAnim.x * 32, GuardAnim.y * 32, 32, 32)); // cropping the image with the position and size of the image 
 	}
 
-		for (int i = 0; i < guards.size(); i++) {
-			window.draw(guards[i]);
-		}
+	for (int i = 0; i < guards.size(); i++) {
+		window.draw(guards[i]);
+	}
 
-	
-	
+
+
 
 }
 

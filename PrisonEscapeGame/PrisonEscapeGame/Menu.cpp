@@ -4,7 +4,7 @@
 
 Menu::Menu(float width, float height)
 {
-	
+
 	if (!font.loadFromFile("../assets/text_assets/FontFile.ttf"))
 	{
 		// error...
@@ -17,7 +17,7 @@ Menu::Menu(float width, float height)
 	MenuText[0].setFillColor(sf::Color::Blue);
 	MenuText[0].setString("Play");
 	MenuText[0].setPosition(sf::Vector2f(width / 2.3, height / (item_Number + 2) * 1)); // center item for width, have the amount of string items + 1, so that they're equally spaced out
-																						
+
 
 
 	MenuText[1].setFont(font);
@@ -35,7 +35,7 @@ Menu::Menu(float width, float height)
 	selectedItemIndex = 0;
 }
 
-	void Menu::MouseHandler(sf::RenderWindow &window) {
+void Menu::MouseHandler(sf::RenderWindow &window) {
 	sf::Vector2i mousePos = ::sf::Mouse::getPosition(window); // getting the position of the mouse relative to the window
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) { // left mouse button
 		if (mousePos.x >= MenuText[0].getPosition().x && mousePos.x <= MenuText[0].getPosition().x + 80) { // if the x position is on the first HUD button
@@ -56,37 +56,37 @@ Menu::Menu(float width, float height)
 				exitPressed = true;
 			}
 		}
-		}
-		
 	}
 
-	void Menu::KeyHandler() {
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-			Up();
-			std::cout << "Up pressed" << std::endl;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-			Down();
-			std::cout << "Down pressed" << std::endl;
-		}
+}
+
+void Menu::KeyHandler() {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+		Up();
+		std::cout << "Up pressed" << std::endl;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+		Down();
+		std::cout << "Down pressed" << std::endl;
+	}
 
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)) {
-			std::cout << "return pressed" << std::endl;
-			switch (GetPressedItem()) {
-			case 0: std::cout << "play pressed" << std::endl;
-				playPressed = true;
-				break;
-			case 1: std::cout << "options pressed" << std::endl;
-				optionsPressed = true;
-				break;
-			case 2: std::cout << "exit pressed" << std::endl;
-				exitPressed = true;
-				break;
-			}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)) {
+		std::cout << "return pressed" << std::endl;
+		switch (GetPressedItem()) {
+		case 0: std::cout << "play pressed" << std::endl;
+			playPressed = true;
+			break;
+		case 1: std::cout << "options pressed" << std::endl;
+			optionsPressed = true;
+			break;
+		case 2: std::cout << "exit pressed" << std::endl;
+			exitPressed = true;
+			break;
 		}
 	}
-	
+}
+
 Menu::~Menu()
 {
 }

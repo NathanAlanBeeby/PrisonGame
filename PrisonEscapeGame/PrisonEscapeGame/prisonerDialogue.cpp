@@ -4,7 +4,7 @@
 prisonerDialogue::prisonerDialogue()
 {
 	prisonerDState = prisonerDialogueMenu; // setting the state for the dialogue
-	
+
 	//hud.guardRep; // these are the 2 ints were going to be incrementing and decremening and using for the missions and trading
 	//hud.prisonerRep;
 	if (!font.loadFromFile("../assets/text_assets/FontFile.ttf"))
@@ -26,13 +26,13 @@ prisonerDialogue::prisonerDialogue()
 	PrisonerText[0].setCharacterSize(50);
 	PrisonerText[0].setFillColor(sf::Color::Blue);
 	PrisonerText[0].setString("Talk");
-	
+
 
 	PrisonerText[1].setFont(font);
 	PrisonerText[1].setCharacterSize(50);
 	PrisonerText[1].setFillColor(sf::Color::Black);
 	PrisonerText[1].setString("Trade");
-	
+
 	PrisonerText[2].setFont(font);
 	PrisonerText[2].setCharacterSize(50);
 	PrisonerText[2].setFillColor(sf::Color::Black);
@@ -41,7 +41,7 @@ prisonerDialogue::prisonerDialogue()
 
 	prisonItemIndex = 0;
 
-	
+
 
 }
 
@@ -57,8 +57,8 @@ void prisonerDialogue::drawDialogueBox(sf::View &view, sf::RenderWindow &window)
 	DialogueBox.setPosition(view.getCenter().x - 200, view.getCenter().y + 80);
 
 	window.draw(DialogueBox);
-	
-	
+
+
 }
 
 void prisonerDialogue::draw(sf::View &view, sf::RenderWindow &window) {
@@ -78,7 +78,7 @@ void prisonerDialogue::draw(sf::View &view, sf::RenderWindow &window) {
 	BoxSegment[1].setPosition(DialogueBox.getPosition().x + 20, BoxSegment[0].getPosition().y + offset + 50);
 	BoxSegment[2].setPosition(DialogueBox.getPosition().x + 20, BoxSegment[1].getPosition().y + offset + 50);
 
-	
+
 
 	for (int i = 0; i < BoxSegment.size(); i++) {
 		window.draw(BoxSegment[i]);
@@ -176,7 +176,7 @@ void prisonerDialogue::Trade(sf::View &view, sf::RenderWindow &window) {
 	tradeSymbol.setTexture(&tradeTexture);
 	tradeSymbol.setPosition(view.getCenter().x - 100, view.getCenter().y + 120);
 
-	
+
 	tradeButton.setSize(sf::Vector2f(150, 50));
 	tradeButton.setTexture(&tradeButtonTexture);
 	tradeButton.setOutlineThickness(2);
@@ -219,7 +219,7 @@ void prisonerDialogue::Mission(sf::View &view, sf::RenderWindow &window, HUD &hu
 	acceptButton.setOutlineColor(sf::Color(0, 0, 0));
 	acceptButton.setPosition(view.getCenter().x - 175, view.getCenter().y + 225);
 
-	
+
 	missions.resize(7);
 	missions[0].setString(PM[0]);
 	missions[1].setString(PM[1]);
@@ -235,26 +235,26 @@ void prisonerDialogue::Mission(sf::View &view, sf::RenderWindow &window, HUD &hu
 		missions[i].setFillColor(sf::Color(0, 0, 0));
 		missions[i].setPosition(view.getCenter().x - 170, view.getCenter().y + 90);
 	}
-	
 
-	
+
+
 	acceptedMission.resize(missions.size(), false); // setting the size to the missions size and setting them to false
-	if (missionsInt == 0) { window.draw(missions[0]); 	}
-	else if (missionsInt == 1) { window.draw(missions[1]); 	}	
-	else if (missionsInt == 2) { window.draw(missions[2]);	}
-	else if (missionsInt == 3) { window.draw(missions[3]); 	}
-	else if (missionsInt == 4) { window.draw(missions[4]); 	}
-	else if (missionsInt == 5) { window.draw(missions[5]); 	}
-	else if (missionsInt == 6) { window.draw(missions[6]); 	}
+	if (missionsInt == 0) { window.draw(missions[0]); }
+	else if (missionsInt == 1) { window.draw(missions[1]); }
+	else if (missionsInt == 2) { window.draw(missions[2]); }
+	else if (missionsInt == 3) { window.draw(missions[3]); }
+	else if (missionsInt == 4) { window.draw(missions[4]); }
+	else if (missionsInt == 5) { window.draw(missions[5]); }
+	else if (missionsInt == 6) { window.draw(missions[6]); }
 
 
-		
-	
+
+
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 		std::cout << "Mission Accepted:" << missionsInt << std::endl; // use this for trade functionality later, give positive rep to player for accepting
 		prisonerDState = prisonerDialogueMenu;
-		hud.missions.push_back(missions [missionsInt]);
+		hud.missions.push_back(missions[missionsInt]);
 		std::cout << "Mission Accepted: " << missionsInt << std::endl;
 		dialogueCheck = false;
 	}
@@ -275,7 +275,7 @@ void prisonerDialogue::Mission(sf::View &view, sf::RenderWindow &window, HUD &hu
 
 void prisonerDialogue::dialogueHandler(sf::View &view, sf::RenderWindow &window, HUD &hud) {
 
-	
+
 	if (prisonerDState == prisonerDialogueMenu) {
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 			Up();
@@ -286,16 +286,16 @@ void prisonerDialogue::dialogueHandler(sf::View &view, sf::RenderWindow &window,
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)) {
 			switch (GetPressedItem()) {
 			case 0: std::cout << "Talk" << std::endl;
-					hud.prisonerRep += 2;
-					prisonerDState = prisonerTalk; // setting the state to prisoner talk
-					talkInt = rand() % 7;
+				hud.prisonerRep += 2;
+				prisonerDState = prisonerTalk; // setting the state to prisoner talk
+				talkInt = rand() % 7;
 				std::cout << "prisonRep: " << hud.prisonerRep << std::endl;
 				break;
 			case 1: std::cout << "Trade" << std::endl;
 				if (hud.prisonerRep > 30) {
 					hud.guardRep -= 2;
 					hud.prisonerRep += 5;
-				prisonerDState = prisonerTrade;// setting the state to prisoner trade
+					prisonerDState = prisonerTrade;// setting the state to prisoner trade
 				}
 				else {
 					std::cout << "You need at least 20 prisoner rep to do this" << std::endl;
@@ -326,7 +326,7 @@ void prisonerDialogue::dialogueHandler(sf::View &view, sf::RenderWindow &window,
 	//PRISONER_______________________________________________
 	if (prisonerDState == prisonerTalk) {
 		drawDialogueBox(view, window);
-	
+
 		Talk(view, window);
 		guardD.prisonInfo = 1;
 

@@ -17,7 +17,7 @@ GameOver::GameOver()
 	ExitMenuText[0].setCharacterSize(100);
 	ExitMenuText[0].setFillColor(sf::Color::Blue);
 	ExitMenuText[0].setString("Retry");
-	
+
 
 	ExitMenuText[1].setFont(font);
 	ExitMenuText[1].setCharacterSize(100);
@@ -71,7 +71,7 @@ void GameOver::drawEndScreen(sf::RenderWindow &window, sf::View &view) {
 	for (int i = 0; i < GameOver_Number; i++) { // drawing the selectable button
 		window.draw(ExitMenuText[i]);
 	}
-	
+
 }
 
 void GameOver::MouseHandler(sf::RenderWindow &window) {

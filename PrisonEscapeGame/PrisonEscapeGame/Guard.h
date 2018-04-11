@@ -39,7 +39,7 @@ public:
 
 	void drawGuard(sf::RenderWindow &window);
 	void guardState();
-	
+
 
 
 	sf::Vector2f getPosition() {

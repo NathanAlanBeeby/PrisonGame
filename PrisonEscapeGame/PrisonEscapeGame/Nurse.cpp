@@ -169,10 +169,10 @@ void Nurse::drawNurse(sf::RenderWindow &window) {
 		}
 		nurses[i].setTextureRect(sf::IntRect(NurseAnim.x * 32, NurseAnim.y * 32, 32, 32)); // cropping the image with the position and size of the image 
 
-		
-			window.draw(nurses[i]);
-		}
-	
+
+		window.draw(nurses[i]);
+	}
+
 
 }
 

@@ -2,16 +2,16 @@
 #include "Guard.h"
 
 
-	HUD::HUD() {
-	
+HUD::HUD() {
+
 
 	guardRep = 100;
 	prisonerRep = 100;
 }
 
 
-	void HUD::drawMissions(sf::View &view, sf::RenderWindow &window) {
-	
+void HUD::drawMissions(sf::View &view, sf::RenderWindow &window) {
+
 
 
 	MissionsBox.setSize(sf::Vector2f(250, 400));
@@ -26,7 +26,7 @@
 	MissionsHeader.setString("Missions");
 	MissionsHeader.setCharacterSize(35);
 	MissionsHeader.setPosition(MissionsBox.getPosition().x + 50, MissionsBox.getPosition().y + 20);
-	
+
 	window.draw(MissionsBox);
 	window.draw(MissionsHeader);
 	for (int i = 0; i < missions.size(); i++) {
@@ -38,7 +38,7 @@
 
 }
 
-	void HUD::drawSkills(sf::View &view, sf::RenderWindow &window) {
+void HUD::drawSkills(sf::View &view, sf::RenderWindow &window) {
 	SkillsBox.setSize(sf::Vector2f(250, 370));
 	SkillsBox.setFillColor(sf::Color(100, 100, 100, HUDopacity));
 	SkillsBox.setOutlineThickness(2);
@@ -163,7 +163,7 @@
 	window.draw(Charisma);
 	window.draw(Knowledge);
 
-	
+
 }
 
 void HUD::MouseInput(sf::RenderWindow &window) {
@@ -260,7 +260,7 @@ void HUD::reputationOpening() {
 		RepOpen = true; // opening missions screen, drawing it to screen
 	}
 }
-void HUD::craftingOpening(){
+void HUD::craftingOpening() {
 	if (InvOpen == true) {
 		craftOpenCount++;
 		if ((craftOpen = true) && craftOpenCount >= 2) {
@@ -279,116 +279,116 @@ void HUD::craftButtonClicked() {
 }
 
 
-	void HUD::HUDUserInput(sf::View &view, sf::RenderWindow &window) {
-		sf::Event event;
-		while (window.pollEvent(event)) {
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) { //skills
-				skillsOpening();
-				std::cout << "S pressed" << std::endl;
-			}
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) { //missions
-				missionsOpening();
-				std::cout << "M pressed" << std::endl;
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) { //reputation
-				reputationOpening();
-				std::cout << "R pressed" << std::endl;
-
-
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) { // inventory
-				inventoryOpening();
-				std::cout << "I pressed" << std::endl;
-			}
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
-				craftingOpening();
-				std::cout << "C pressed" << std::endl;
-			}
+void HUD::HUDUserInput(sf::View &view, sf::RenderWindow &window) {
+	sf::Event event;
+	while (window.pollEvent(event)) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) { //skills
+			skillsOpening();
+			std::cout << "S pressed" << std::endl;
 		}
-	
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) { //missions
+			missionsOpening();
+			std::cout << "M pressed" << std::endl;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) { //reputation
+			reputationOpening();
+			std::cout << "R pressed" << std::endl;
+
+
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) { // inventory
+			inventoryOpening();
+			std::cout << "I pressed" << std::endl;
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
+			craftingOpening();
+			std::cout << "C pressed" << std::endl;
+		}
 	}
 
-	void HUD::drawInventory(sf::View &view, sf::RenderWindow &window) {
-		if (!characterTexture.loadFromFile("../assets/image_assets/sprite_image.png")) {
-			std::cout << "Load fail Error on playerFaceTexture" << std::endl;
-			system("pause");
+}
 
-		}
-		InvSlot.resize(8);
-
-		InventoryBox.setSize(sf::Vector2f(250, 420));
-		InventoryBox.setFillColor(sf::Color(55, 55, 55, HUDopacity));
-		InventoryBox.setOutlineThickness(2);
-		InventoryBox.setOutlineColor(sf::Color(0, 0, 0, HUDopacity));
-		InventoryBox.setPosition(view.getCenter().x + 140, view.getCenter().y - 150);
-
-		characterBox.setSize(sf::Vector2f(150, 195));
-		//characterBox.setFillColor(sf::Color(15, 15, 15, HUDopacity));
-		characterBox.setTexture(&characterTexture);
-		characterBox.setOutlineThickness(1);
-		characterBox.setOutlineColor(sf::Color(0, 0, 0, HUDopacity));
-		characterBox.setPosition(InventoryBox.getPosition().x + 5, InventoryBox.getPosition().y + 70);
-
-
-		sf::Text InventoryText;
-		InventoryText.setFont(HUDFont);
-		InventoryText.setFillColor(sf::Color(255, 255, 255, HUDopacity));
-		InventoryText.setString("Inventory");
-		InventoryText.setCharacterSize(30);
-		InventoryText.setPosition(InventoryBox.getPosition().x + 50, InventoryBox.getPosition().y + 10);
-		
-		
-		for (int i = 0; i < InvSlot.size(); i++) {
-			InvSlot[i].setSize(sf::Vector2f(40, 45));
-			InvSlot[i].setOutlineThickness(1);
-			InvSlot[i].setFillColor(sf::Color(15, 15, 15, HUDopacity));
-			InvSlot[i].setOutlineColor(sf::Color(0, 0, 0, HUDopacity));
-			
-			
-		}
-		InvSlot[0].setPosition(InventoryBox.getPosition().x + 160, InventoryBox.getPosition().y + 70);
-		InvSlot[1].setPosition(InvSlot[0].getPosition().x, InvSlot[0].getPosition().y + 50);
-		InvSlot[2].setPosition(InvSlot[1].getPosition().x, InvSlot[1].getPosition().y + 50);
-		InvSlot[3].setPosition(InvSlot[2].getPosition().x, InvSlot[2].getPosition().y + 50);
-		InvSlot[4].setPosition(InventoryBox.getPosition().x + 205, InventoryBox.getPosition().y + 70);
-		InvSlot[5].setPosition(InvSlot[4].getPosition().x, InvSlot[4].getPosition().y + 50);
-		InvSlot[6].setPosition(InvSlot[5].getPosition().x, InvSlot[5].getPosition().y + 50);
-		InvSlot[7].setPosition(InvSlot[6].getPosition().x, InvSlot[6].getPosition().y + 50);
-
-		
-
-		CraftButton.setSize(sf::Vector2f(210, 100));
-		CraftButton.setOutlineThickness(1);
-		CraftButton.setFillColor(sf::Color(15, 15, 15, HUDopacity));
-		CraftButton.setOutlineColor(sf::Color(0, 0, 0, HUDopacity));
-		CraftButton.setPosition(InventoryBox.getPosition().x + 20, InventoryBox.getPosition().y + 280);
-
-		sf::Text CraftText;
-		CraftText.setFont(HUDFont);
-		CraftText.setFillColor(sf::Color(255, 255, 255, HUDopacity));
-		CraftText.setString("Crafting");
-		CraftText.setCharacterSize(30);
-		CraftText.setPosition(CraftButton.getPosition().x + 50, CraftButton.getPosition().y + 30);
-
-
-		for (int i = 0; i < InvSlot.size(); i++) {
-			window.draw(InvSlot[i]);
-		}
-		for (int i = 0; i < EmptySlot.size(); i++) {
-			EmptySlot[i].setPosition(InvSlot[i].getPosition().x, InvSlot[i].getPosition().y);
-			EmptySlot[i].setTexture(&EmptyTexture[i]); // setting the texture to the texture set in the inventory items class
-			window.draw(EmptySlot[i]);
-		}
-
-		window.draw(InventoryBox);
-		window.draw(InventoryText);
-		window.draw(characterBox);
-		window.draw(CraftButton);
-		window.draw(CraftText);
+void HUD::drawInventory(sf::View &view, sf::RenderWindow &window) {
+	if (!characterTexture.loadFromFile("../assets/image_assets/sprite_image.png")) {
+		std::cout << "Load fail Error on playerFaceTexture" << std::endl;
+		system("pause");
 
 	}
+	InvSlot.resize(8);
+
+	InventoryBox.setSize(sf::Vector2f(250, 420));
+	InventoryBox.setFillColor(sf::Color(55, 55, 55, HUDopacity));
+	InventoryBox.setOutlineThickness(2);
+	InventoryBox.setOutlineColor(sf::Color(0, 0, 0, HUDopacity));
+	InventoryBox.setPosition(view.getCenter().x + 140, view.getCenter().y - 150);
+
+	characterBox.setSize(sf::Vector2f(150, 195));
+	//characterBox.setFillColor(sf::Color(15, 15, 15, HUDopacity));
+	characterBox.setTexture(&characterTexture);
+	characterBox.setOutlineThickness(1);
+	characterBox.setOutlineColor(sf::Color(0, 0, 0, HUDopacity));
+	characterBox.setPosition(InventoryBox.getPosition().x + 5, InventoryBox.getPosition().y + 70);
+
+
+	sf::Text InventoryText;
+	InventoryText.setFont(HUDFont);
+	InventoryText.setFillColor(sf::Color(255, 255, 255, HUDopacity));
+	InventoryText.setString("Inventory");
+	InventoryText.setCharacterSize(30);
+	InventoryText.setPosition(InventoryBox.getPosition().x + 50, InventoryBox.getPosition().y + 10);
+
+
+	for (int i = 0; i < InvSlot.size(); i++) {
+		InvSlot[i].setSize(sf::Vector2f(40, 45));
+		InvSlot[i].setOutlineThickness(1);
+		InvSlot[i].setFillColor(sf::Color(15, 15, 15, HUDopacity));
+		InvSlot[i].setOutlineColor(sf::Color(0, 0, 0, HUDopacity));
+
+
+	}
+	InvSlot[0].setPosition(InventoryBox.getPosition().x + 160, InventoryBox.getPosition().y + 70);
+	InvSlot[1].setPosition(InvSlot[0].getPosition().x, InvSlot[0].getPosition().y + 50);
+	InvSlot[2].setPosition(InvSlot[1].getPosition().x, InvSlot[1].getPosition().y + 50);
+	InvSlot[3].setPosition(InvSlot[2].getPosition().x, InvSlot[2].getPosition().y + 50);
+	InvSlot[4].setPosition(InventoryBox.getPosition().x + 205, InventoryBox.getPosition().y + 70);
+	InvSlot[5].setPosition(InvSlot[4].getPosition().x, InvSlot[4].getPosition().y + 50);
+	InvSlot[6].setPosition(InvSlot[5].getPosition().x, InvSlot[5].getPosition().y + 50);
+	InvSlot[7].setPosition(InvSlot[6].getPosition().x, InvSlot[6].getPosition().y + 50);
+
+
+
+	CraftButton.setSize(sf::Vector2f(210, 100));
+	CraftButton.setOutlineThickness(1);
+	CraftButton.setFillColor(sf::Color(15, 15, 15, HUDopacity));
+	CraftButton.setOutlineColor(sf::Color(0, 0, 0, HUDopacity));
+	CraftButton.setPosition(InventoryBox.getPosition().x + 20, InventoryBox.getPosition().y + 280);
+
+	sf::Text CraftText;
+	CraftText.setFont(HUDFont);
+	CraftText.setFillColor(sf::Color(255, 255, 255, HUDopacity));
+	CraftText.setString("Crafting");
+	CraftText.setCharacterSize(30);
+	CraftText.setPosition(CraftButton.getPosition().x + 50, CraftButton.getPosition().y + 30);
+
+
+	for (int i = 0; i < InvSlot.size(); i++) {
+		window.draw(InvSlot[i]);
+	}
+	for (int i = 0; i < EmptySlot.size(); i++) {
+		EmptySlot[i].setPosition(InvSlot[i].getPosition().x, InvSlot[i].getPosition().y);
+		EmptySlot[i].setTexture(&EmptyTexture[i]); // setting the texture to the texture set in the inventory items class
+		window.draw(EmptySlot[i]);
+	}
+
+	window.draw(InventoryBox);
+	window.draw(InventoryText);
+	window.draw(characterBox);
+	window.draw(CraftButton);
+	window.draw(CraftText);
+
+}
 
 
 void HUD::drawReputation(sf::View &view, sf::RenderWindow &window) {
@@ -407,7 +407,7 @@ void HUD::drawReputation(sf::View &view, sf::RenderWindow &window) {
 
 	PRep.setSize(sf::Vector2f(prisonerRep, 20));
 	PRep.setFillColor(sf::Color(255, 51, 51, HUDopacity));
-	
+
 	emptyGRep.setPosition(view.getCenter().x - 70, view.getCenter().y - 200);
 	GRep.setPosition(view.getCenter().x - 70, view.getCenter().y - 200);
 
@@ -503,7 +503,7 @@ void HUD::drawHUD(sf::View &view, sf::RenderWindow &window) {
 	prisonPound.setSize(sf::Vector2f(50, 50));
 	prisonPound.setTexture(&poundTexture);
 	prisonPound.setPosition(view.getCenter().x - 25, view.getCenter().y - 280);
-	
+
 	std::string moneyString = std::to_string(prisonMoney);
 	sf::Text moneyText;
 	moneyText.setFont(HUDFont2);
@@ -664,7 +664,7 @@ void HUD::drawHUD(sf::View &view, sf::RenderWindow &window) {
 	routineBox.setOutlineColor(sf::Color(0, 0, 0, HUDopacity));
 	routineBox.setPosition(view.getCenter().x + 230, view.getCenter().y - 200);
 
-	
+
 
 	sf::Time TimeElapsed = HUDClock.getElapsedTime(); // setting the time to the hud clock, so it can count seconds
 	sf::Time seconds = sf::seconds(1); // this is to compare to the time elapsed to get 1 second
@@ -697,8 +697,8 @@ void HUD::drawHUD(sf::View &view, sf::RenderWindow &window) {
 			day++;
 			HUDTimeMinute = 0; // set hudtime back to 0
 		}
-	
-		
+
+
 	}
 
 	sf::RectangleShape daynight(sf::Vector2f(800, 600));
@@ -733,7 +733,7 @@ void HUD::drawHUD(sf::View &view, sf::RenderWindow &window) {
 	window.draw(LevelText);
 	window.draw(LevelString);
 	window.draw(prisonPound);
-	window.draw(moneyText);	  
+	window.draw(moneyText);
 
 	Times(view, window);
 }
@@ -750,7 +750,7 @@ void HUD::Times(sf::View &view, sf::RenderWindow &window) {
 	routine[3].setString("Yard Time");
 	routine[4].setString("Bed Time");
 	routine[5].setString("Free Time");
-	
+
 
 
 	for (int i = 0; i < routine.size(); i++) {
@@ -763,7 +763,7 @@ void HUD::Times(sf::View &view, sf::RenderWindow &window) {
 	if (HUDTimeMinute >= 0 && HUDTimeMinute <= 6) { // if between 0 - 7
 		window.draw(routine[4]); // bed time
 		bedTime = true;
-	
+
 	}
 	else if (HUDTimeMinute >= 7 && HUDTimeMinute <= 7) { // if 8
 		window.draw(routine[0]); // chow time
@@ -785,7 +785,7 @@ void HUD::Times(sf::View &view, sf::RenderWindow &window) {
 		window.draw(routine[0]); // chow time
 		workTime = false;
 		chowTime = true;
-		
+
 	}
 	else if (HUDTimeMinute >= 14 && HUDTimeMinute <= 17) { // if 14-17
 		window.draw(routine[1]); // work time
@@ -796,25 +796,26 @@ void HUD::Times(sf::View &view, sf::RenderWindow &window) {
 		window.draw(routine[0]); // chow time
 		workTime = false;
 		chowTime = true;
-		
+
 	}
 	else if (HUDTimeMinute >= 19 && HUDTimeMinute <= 19) { // if 19
 		window.draw(routine[2]); // shower time
 		chowTime = false;
 		showerTime = true;
-	
+
 	}
 	else if (HUDTimeMinute > 19 && HUDTimeMinute <= 22) { // if 20-22
 		window.draw(routine[5]);// free time
 		showerTime = false;
 		freeTime = true;
-		
-	} else if (HUDTimeMinute >= 23 && HUDTimeMinute <= 23) { // if 23
+
+	}
+	else if (HUDTimeMinute >= 23 && HUDTimeMinute <= 23) { // if 23
 		window.draw(routine[4]);//bedtime
 		freeTime = false;
 		bedTime = true;
 	}
-	
+
 }
 
 void HUD::drawCraft(sf::View &view, sf::RenderWindow &window) {
@@ -823,7 +824,7 @@ void HUD::drawCraft(sf::View &view, sf::RenderWindow &window) {
 	CraftBox.setFillColor(sf::Color(15, 15, 15, HUDopacity));
 	CraftBox.setOutlineColor(sf::Color(0, 0, 0, HUDopacity));
 	CraftBox.setPosition(view.getCenter().x - 150, view.getCenter().y - 120);
-	
+
 	submitCraft.setSize(sf::Vector2f(210, 75));
 	submitCraft.setOutlineThickness(1);
 	submitCraft.setFillColor(sf::Color(15, 15, 15, HUDopacity));
@@ -838,7 +839,7 @@ void HUD::drawCraft(sf::View &view, sf::RenderWindow &window) {
 	submitText.setCharacterSize(30);
 	submitText.setPosition(submitCraft.getPosition().x + 40, submitCraft.getPosition().y + 20);
 
-	
+
 	std::vector<sf::RectangleShape>  inputBox(4, sf::RectangleShape(craftInputBox)); // an array of 5 cell doorsa
 
 	for (int i = 0; i < inputBox.size(); i++) {

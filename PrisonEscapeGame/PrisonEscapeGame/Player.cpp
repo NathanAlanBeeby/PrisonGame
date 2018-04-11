@@ -26,7 +26,7 @@ void Player::playerKeyboardMovement(sf::View &view, sf::RenderWindow &window) {
 		vel.y -= moveSpeed;
 		CharAnim.y = Up;
 		lastPosition = Up;
-	
+
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
@@ -48,7 +48,7 @@ void Player::playerKeyboardMovement(sf::View &view, sf::RenderWindow &window) {
 		vel.x += moveSpeed;
 		CharAnim.y = Right;
 		lastPosition = Right;
-	
+
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
@@ -69,7 +69,7 @@ void Player::playerKeyboardMovement(sf::View &view, sf::RenderWindow &window) {
 			CharAnim.y = AttackDown;
 			lastPosition = AttackDown;
 		}
-	
+
 	}
 
 
@@ -86,7 +86,7 @@ void Player::playerKeyboardMovement(sf::View &view, sf::RenderWindow &window) {
 	lastVelocity = sf::Vector2f(-vel.x, -vel.y);
 
 	clock.restart();
-	CharAnim.x+=1; // incrementing the character direction x, to flick through sprite images	
+	CharAnim.x += 1; // incrementing the character direction x, to flick through sprite images	
 	if (CharAnim.x * 32 >= spriteTexture.getSize().x)
 	{// if the texture width is greater than 
 		CharAnim.x = 0; // when it reaches the edge, go back to 0
@@ -98,6 +98,6 @@ void Player::playerKeyboardMovement(sf::View &view, sf::RenderWindow &window) {
 
 void Player::CollisionResponse()
 {
-	characterSprite.move(lastVelocity); 
+	characterSprite.move(lastVelocity);
 }
 

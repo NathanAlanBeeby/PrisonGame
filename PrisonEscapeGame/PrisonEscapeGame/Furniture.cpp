@@ -81,7 +81,7 @@ Furniture::Furniture(std::string furnitureFile, sf::RenderWindow &window)
 
 Furniture::~Furniture()
 {
-	
+
 }
 
 

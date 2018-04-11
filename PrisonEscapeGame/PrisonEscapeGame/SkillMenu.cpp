@@ -58,7 +58,7 @@ SkillMenu::SkillMenu(float width, float height)
 	SkillMenuText[6].setCharacterSize(50);
 	SkillMenuText[6].setFillColor(sf::Color::White);
 	SkillMenuText[6].setString("Game");
-	SkillMenuText[6].setPosition(sf::Vector2f(width - 150,  height - 90)); // center item for width, have the amount of string items + 1, so that they're equally spaced out
+	SkillMenuText[6].setPosition(sf::Vector2f(width - 150, height - 90)); // center item for width, have the amount of string items + 1, so that they're equally spaced out
 
 
 
@@ -74,7 +74,7 @@ SkillMenu::~SkillMenu()
 
 
 
-void SkillMenu::keyHandler(HUD &hud){
+void SkillMenu::keyHandler(HUD &hud) {
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 		Up();
@@ -92,7 +92,7 @@ void SkillMenu::keyHandler(HUD &hud){
 			if (hud.playerStrength != 0) {
 				hud.playerStrength--;
 				startSkillPoints++;
-			//	playerStrength--;
+				//	playerStrength--;
 			}
 			break;
 		case 1: std::cout << "Stamina pressed" << std::endl;
@@ -106,21 +106,21 @@ void SkillMenu::keyHandler(HUD &hud){
 			if (hud.playerArmour != 0) {
 				hud.playerArmour--;
 				startSkillPoints++;
-			//	playerArmour--;
+				//	playerArmour--;
 			}
 			break;
 		case 3: std::cout << "Charisma pressed" << std::endl;
 			if (hud.playerCharisma != 0) {
 				hud.playerCharisma--;
 				startSkillPoints++;
-			//	playerCharisma--;
+				//	playerCharisma--;
 			}
 			break;
 		case 4: std::cout << "Knowledge pressed" << std::endl;
 			if (hud.playerKnowledge != 0) {
 				hud.playerKnowledge--;
 				startSkillPoints++;
-			//	playerKnowledge--;
+				//	playerKnowledge--;
 			}
 			break;
 
@@ -134,7 +134,7 @@ void SkillMenu::keyHandler(HUD &hud){
 			if (startSkillPoints != 0) {
 				hud.playerStrength++;
 				startSkillPoints--;
-			//	playerStrength++;
+				//	playerStrength++;
 			}
 			break;
 		case 1: std::cout << "Stamina pressed! Start Skill Points: " << startSkillPoints << std::endl;
@@ -142,14 +142,14 @@ void SkillMenu::keyHandler(HUD &hud){
 				hud.playerStamina++;
 				std::cout << "Stamina: " << hud.playerStamina << std::endl;
 				startSkillPoints--;
-			//	playerStamina++;
+				//	playerStamina++;
 			}
 			break;
 		case 2: std::cout << "Endurance pressed" << std::endl;
 			if (startSkillPoints != 0) {
 				hud.playerArmour++;
 				startSkillPoints--;
-			//	playerArmour++;
+				//	playerArmour++;
 			}
 			break;
 		case 3: std::cout << "Charisma pressed" << std::endl;
@@ -186,30 +186,30 @@ void SkillMenu::keyHandler(HUD &hud){
 	}
 }
 
-void SkillMenu::gamePressed(){
+void SkillMenu::gamePressed() {
 	if (startSkillPoints == 0) {
 		gamePress = true; // do additional stuff here for creation of game and transition effect between menu maybe?
 	}
 }
-void SkillMenu::exitPressed(){
+void SkillMenu::exitPressed() {
 	exitPress = true; // do stuff on exit here (destructor)
 }
 
 
-void SkillMenu::mouseHandler(sf::RenderWindow &window){
+void SkillMenu::mouseHandler(sf::RenderWindow &window) {
 	sf::Vector2i mousePos = ::sf::Mouse::getPosition(window); // getting the position of the mouse relative to the window
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) { // left mouse button
 		if (mousePos.x >= SkillMenuText[5].getPosition().x && mousePos.x <= SkillMenuText[5].getPosition().x + 115) { // if the x position is on the first HUD button
 			if (mousePos.y >= SkillMenuText[5].getPosition().y && mousePos.y <= SkillMenuText[5].getPosition().y + 100) { // if the y position is between the HUD button
 				std::cout << "Exit Button pressed" << std::endl;
 				exitPressed();
-			
+
 			}
 		}
 		if (mousePos.x >= SkillMenuText[6].getPosition().x && mousePos.x <= SkillMenuText[6].getPosition().x + 115) { // if the x position is on the first HUD button
 			if (mousePos.y >= SkillMenuText[6].getPosition().y && mousePos.y <= SkillMenuText[6].getPosition().y + 100) { // if the y position is between the HUD button
 				std::cout << "Game Button pressed" << std::endl;
-				gamePressed();	
+				gamePressed();
 			}
 		}
 	}
@@ -217,7 +217,7 @@ void SkillMenu::mouseHandler(sf::RenderWindow &window){
 
 
 void SkillMenu::drawBars(sf::RenderWindow &window, HUD &hud) {
-	
+
 	StrBar.setSize(sf::Vector2f(200, 20));
 	StrBar.setFillColor(sf::Color(255, 0, 0));
 	StrBar.setOutlineThickness(2);
@@ -295,7 +295,7 @@ void SkillMenu::drawBars(sf::RenderWindow &window, HUD &hud) {
 	SpendPoints.setString("You have more Skillpoints to spend");
 	SpendPoints.setCharacterSize(50);
 	SpendPoints.setPosition(450, 100);
-	
+
 
 
 	window.draw(StrBar);
@@ -316,7 +316,7 @@ void SkillMenu::draw(sf::RenderWindow &window) {
 	for (int i = 0; i < skill_item_Number; i++) {
 		window.draw(SkillMenuText[i]);
 	}
-	
+
 
 }
 
