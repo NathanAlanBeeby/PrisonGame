@@ -259,6 +259,7 @@ void guardDialogue::dialogueHandler(sf::View &view, sf::RenderWindow &window, HU
 				hud.guardRep += 2;
 				guardDState = guardTalk; // setting the state to guard talk
 				talkInt = rand() % 6;
+				hud.charIncrement += 1;
 
 				break;
 			case 1: std::cout << "Snitch" << std::endl;
@@ -270,6 +271,13 @@ void guardDialogue::dialogueHandler(sf::View &view, sf::RenderWindow &window, HU
 				}
 				else {
 					std::cout << "You need at least 20 guard rep to do this" << std::endl;
+					sf::Text repText;
+					repText.setString("You need a higher guard reputation");
+					repText.setFont(font);
+					repText.setCharacterSize(40);
+					repText.setFillColor(sf::Color(0, 0, 255));
+					repText.setPosition(DialogueBox.getPosition().x + 80, DialogueBox.getPosition().y - 50);
+					window.draw(repText);
 				}
 				break;
 			case 2: std::cout << "Missions" << std::endl;
@@ -281,6 +289,13 @@ void guardDialogue::dialogueHandler(sf::View &view, sf::RenderWindow &window, HU
 				}
 				else {
 					std::cout << "You need 40 guard rep to do this" << std::endl;
+					sf::Text repText;
+					repText.setString("You need a higher guard reputation");
+					repText.setFont(font);
+					repText.setCharacterSize(40);
+					repText.setFillColor(sf::Color(0, 0, 255));
+					repText.setPosition(DialogueBox.getPosition().x + 80, DialogueBox.getPosition().y - 50);
+					window.draw(repText);
 				}
 				break;
 

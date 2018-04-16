@@ -313,7 +313,12 @@ void Prisoner::prisonerAttack(HUD &hud, Player &player) {
 
 
 	if (player.characterSprite.getGlobalBounds().intersects(prisoners[PrisonNumAngry].getGlobalBounds())) {
-		hud.healthBar -= 5; // losing health from enemy attacking
+		if (hud.playerArmour >= 1) {
+			hud.playerArmour -= 1;
+		}
+		if (hud.playerArmour == 0) {
+			hud.healthBar -= 5; // losing health from enemy attacking
+		}
 		//std::cout << "Prisoner Attacking" << std::endl;
 	}
 
@@ -321,6 +326,7 @@ void Prisoner::prisonerAttack(HUD &hud, Player &player) {
 	if (prisoners[PrisonNumAngry].getPosition().x < player.getPosition().x - 192 || prisoners[PrisonNumAngry].getPosition().x > player.getPosition().x + 192 &&
 		prisoners[PrisonNumAngry].getPosition().y < player.getPosition().y - 192 || prisoners[PrisonNumAngry].getPosition().y > player.getPosition().y + 192) {
 		//	std::cout << "Player out of range" << std::endl;
+		hud.playerArmour += 1;
 		prisonerAttacked = false;
 		PState = IDLE;
 	}

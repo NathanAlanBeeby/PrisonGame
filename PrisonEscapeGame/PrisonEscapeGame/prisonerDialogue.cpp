@@ -290,6 +290,7 @@ void prisonerDialogue::dialogueHandler(sf::View &view, sf::RenderWindow &window,
 				prisonerDState = prisonerTalk; // setting the state to prisoner talk
 				talkInt = rand() % 7;
 				std::cout << "prisonRep: " << hud.prisonerRep << std::endl;
+				hud.charIncrement += 1;
 				break;
 			case 1: std::cout << "Trade" << std::endl;
 				if (hud.prisonerRep > 30) {
@@ -299,6 +300,13 @@ void prisonerDialogue::dialogueHandler(sf::View &view, sf::RenderWindow &window,
 				}
 				else {
 					std::cout << "You need at least 20 prisoner rep to do this" << std::endl;
+					sf::Text repText;
+					repText.setString("You need a higher prisoner reputation");
+					repText.setFont(font);
+					repText.setCharacterSize(40);
+					repText.setFillColor(sf::Color(255, 0, 0));
+					repText.setPosition(DialogueBox.getPosition().x + 80, DialogueBox.getPosition().y - 50);
+					window.draw(repText);
 				}
 				break;
 			case 2: std::cout << "Missions" << std::endl;
@@ -310,6 +318,13 @@ void prisonerDialogue::dialogueHandler(sf::View &view, sf::RenderWindow &window,
 				}
 				else {
 					std::cout << "You need at least 40 prisoner rep to do this" << std::endl;
+					sf::Text repText;
+					repText.setString("You need a higher prisoner reputation");
+					repText.setFont(font);
+					repText.setCharacterSize(40);
+					repText.setFillColor(sf::Color(255, 0, 0));
+					repText.setPosition(DialogueBox.getPosition().x + 80, DialogueBox.getPosition().y - 50);
+					window.draw(repText);
 				}
 				break;
 

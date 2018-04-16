@@ -15,8 +15,8 @@ public:
 
 
 	HUD hud;
-	float moveSpeed = 15;
-
+	float moveSpeed = 10;
+	float playerDamage;
 
 	sf::Clock clock;
 	sf::Vector2i ScreenSize;
@@ -31,10 +31,10 @@ public:
 	int InvOpenCount = 0; // way of knowing if the player has hit the key twice
 	int SkilOpenCount = 0; // way of knowing if the player has hit the key twice
 
-	Player(sf::Vector2f size, sf::Vector2f position);
+	Player(sf::Vector2f size, sf::Vector2f position, HUD &hud);
 
 
-	void playerKeyboardMovement(sf::View &view, sf::RenderWindow &window);
+	void playerKeyboardMovement(sf::View &view, sf::RenderWindow &window, HUD &hud);
 
 
 	sf::Vector2f vel;

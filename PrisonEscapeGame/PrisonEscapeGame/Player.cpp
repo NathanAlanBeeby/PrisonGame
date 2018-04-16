@@ -2,7 +2,8 @@
 
 
 
-Player::Player(sf::Vector2f size, sf::Vector2f position) {
+Player::Player(sf::Vector2f size, sf::Vector2f position, HUD &hud) {
+	playerDamage = 1 + (hud.playerStrength / 3); // making the player damage a third of the hud player strength (?/100) + the initial player damage (1)
 	if (!spriteTexture.loadFromFile("../assets/image_assets/characters/sprite_images.png"))
 		std::cerr << "Error";
 	characterSprite.setSize(size);
@@ -17,20 +18,20 @@ CharMove lastPosition = Down;
 sf::Vector2i CharAnim(1, Down); // this is a vector with 2 values, the x being the number multiplied by the image width, and the second is the direction
 
 
-void Player::playerKeyboardMovement(sf::View &view, sf::RenderWindow &window) {
+void Player::playerKeyboardMovement(sf::View &view, sf::RenderWindow &window, HUD &hud) {
 
 	vel.x = 0;
 	vel.y = 0;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-		vel.y -= moveSpeed;
+		vel.y -= (moveSpeed + (hud.playerStamina / 4));
 		CharAnim.y = Up;
 		lastPosition = Up;
 
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
-		vel.y += moveSpeed;
+		vel.y += (moveSpeed + (hud.playerStamina / 4));
 		CharAnim.y = Down;
 		lastPosition = Down;
 
@@ -38,14 +39,14 @@ void Player::playerKeyboardMovement(sf::View &view, sf::RenderWindow &window) {
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		vel.x -= moveSpeed;
+		vel.x -= (moveSpeed + (hud.playerStamina / 4));
 		CharAnim.y = Left;
 		lastPosition = Left;
 
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		vel.x += moveSpeed;
+		vel.x += (moveSpeed + (hud.playerStamina / 4));
 		CharAnim.y = Right;
 		lastPosition = Right;
 

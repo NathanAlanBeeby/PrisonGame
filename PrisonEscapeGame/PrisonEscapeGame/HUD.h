@@ -26,6 +26,7 @@ public:
 	sf::RectangleShape clockOuterBox, clockDigital, date, routineBox;
 
 	sf::RectangleShape PlayerBox, noHealth, health, noXP, XP, prisonPound, emptyGRep, emptyPRep, GRep, PRep;
+	int charIncrement; // incrementation of charisma
 
 	sf::RectangleShape box, box1, box2;
 

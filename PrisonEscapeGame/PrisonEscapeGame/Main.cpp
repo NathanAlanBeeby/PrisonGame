@@ -138,7 +138,7 @@ int main()
 	}
 
 	//Characters (player and AI)
-	Player player(sf::Vector2f(32, 32), sf::Vector2f(150, 150));
+	Player player(sf::Vector2f(32, 32), sf::Vector2f(150, 150), hud);
 	Prisoner prisoner(prisonerFile, window);
 	Guard guard(guardFile, window);
 	Warden warden(wardenFile, window);
@@ -209,6 +209,9 @@ int main()
 				}
 				else if (GameState == Game) {
 					hud.MouseInput(window);
+				}
+				else if (GameState == GameOverMenu) {
+					gameover.MouseHandler(window);
 				}
 				break;
 			}
@@ -600,7 +603,7 @@ int main()
 			doors.drawDoors(window);
 			skillitems.drawSkillItems(window);
 
-			player.playerKeyboardMovement(view, window);
+			player.playerKeyboardMovement(view, window, hud);
 
 
 

@@ -497,7 +497,12 @@ void HUD::drawHUD(sf::View &view, sf::RenderWindow &window) {
 		system("pause");
 
 	}
-
+	
+	if (charIncrement >= 10) {
+		playerCharisma += 1;
+		charIncrement = 0;
+		std::cout << "playerCharisma += 1" << std::endl;
+	}
 	//Routine routine;
 
 	prisonPound.setSize(sf::Vector2f(50, 50));
@@ -600,6 +605,10 @@ void HUD::drawHUD(sf::View &view, sf::RenderWindow &window) {
 
 	health.setSize(sf::Vector2f(healthBar, 20));
 	health.setFillColor(sf::Color(0, 255, 0, HUDopacity));
+	sf::RectangleShape ArmourAddition;
+	ArmourAddition.setSize(sf::Vector2f((playerArmour * 2), 20));
+	ArmourAddition.setFillColor(sf::Color(155, 155, 155));
+	ArmourAddition.setPosition(view.getCenter().x - 300, view.getCenter().y - 280);
 
 	noXP.setSize(sf::Vector2f(210, 20));
 	noXP.setFillColor(sf::Color(100, 100, 100, HUDopacity));
@@ -717,6 +726,7 @@ void HUD::drawHUD(sf::View &view, sf::RenderWindow &window) {
 	window.draw(PlayerIcon);
 	window.draw(noHealth);
 	window.draw(health);
+	window.draw(ArmourAddition);
 	window.draw(noXP);
 	window.draw(XP);
 
