@@ -3,7 +3,7 @@
 
 
 Player::Player(sf::Vector2f size, sf::Vector2f position, HUD &hud) {
-	playerDamage = 1 + (hud.playerStrength / 3); // making the player damage a third of the hud player strength (?/100) + the initial player damage (1)
+	playerDamage = 5; // making the player damage a third of the hud player strength (?/100) + the initial player damage (1)
 	if (!spriteTexture.loadFromFile("../assets/image_assets/characters/sprite_images.png"))
 		std::cerr << "Error";
 	characterSprite.setSize(size);

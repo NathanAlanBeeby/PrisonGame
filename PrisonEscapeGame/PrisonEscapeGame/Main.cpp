@@ -50,7 +50,8 @@ int main()
 	sf::View view; //setting the view for the scrolling screen
 
 	sf::RenderWindow window(sf::VideoMode(ScreenSize.x, ScreenSize.y), "Prison Escape Game"); //setting the window
-
+	window.setVerticalSyncEnabled(true); // controlling the refresh rate in line with the vertical frequency of the monitor
+	window.setFramerateLimit(60); // capping the frame rate at 60 frames per second
 	//Declaring the classes that will be used within the main which have no parameters passed
 	InvState invS;
 	skillItemsMenu skills;
@@ -210,7 +211,7 @@ int main()
 				else if (GameState == Game) {
 					hud.MouseInput(window);
 				}
-				else if (GameState == GameOverMenu) {
+				if (GameState == GameOverMenu) {
 					gameover.MouseHandler(window);
 				}
 				break;
@@ -438,7 +439,9 @@ int main()
 						std::cout << "prisoner Hit" << std::endl;
 						prisoner.prisonerAttacked = true;
 						prisoner.PrisonerAttackedChoice(i); // telling the prisoner class who was attacked
-						prisoner.prisonerHealth -= 10; // temporary value until strength and skills are implemented
+						prisoner.prisonerHealth[i] -= player.playerDamage + hud.playerStrength; // temporary value until strength and skills are implemented
+						std::cout << "Player Damage was: " << player.playerDamage + hud.playerStrength << std::endl;
+						std::cout << "Prisoner Health: " << prisoner.prisonerHealth[i] << std::endl;
 						hud.prisonerRep -= 10;
 						sfx.punchEffect(options);
 					}

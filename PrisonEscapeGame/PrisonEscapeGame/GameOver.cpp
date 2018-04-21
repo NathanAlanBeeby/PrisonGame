@@ -75,7 +75,11 @@ void GameOver::drawEndScreen(sf::RenderWindow &window, sf::View &view) {
 }
 
 void GameOver::MouseHandler(sf::RenderWindow &window) {
-	sf::Vector2i mousePos = ::sf::Mouse::getPosition(window); // getting the position of the mouse relative to the window
+	//ISSUE HERE IS THAT VIEW HAS MOVED
+	sf::Vector2i mousePos = sf::Mouse::getPosition(window); // getting the position of the mouse relative to the window
+	std::cout << "Mouse Pos - X: " << mousePos.x << ", Y: " << mousePos.y << std::endl;
+	std::cout << "ExitMenuText 0 Pos - X: " << ExitMenuText[0].getPosition().x << ", Y: " << ExitMenuText[0].getPosition().y << std::endl;
+	std::cout << "ExitMenuText 1 Pos - X: " << ExitMenuText[1].getPosition().x << ", Y: " << ExitMenuText[1].getPosition().y << std::endl;
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) { // left mouse button
 		if (mousePos.x >= ExitMenuText[0].getPosition().x && mousePos.x <= ExitMenuText[0].getPosition().x + 115) { // if the x position is on the first HUD button
 			if (mousePos.y >= ExitMenuText[0].getPosition().y && mousePos.y <= ExitMenuText[0].getPosition().y + 100) { // if the y position is between the HUD button

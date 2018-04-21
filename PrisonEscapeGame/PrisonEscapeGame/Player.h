@@ -14,7 +14,6 @@ public:
 
 
 
-	HUD hud;
 	float moveSpeed = 10;
 	float playerDamage;
 

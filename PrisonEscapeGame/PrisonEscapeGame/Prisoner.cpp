@@ -18,6 +18,7 @@ std::vector<sf::Vector2i>PrisonAnim;
 Prisoner::Prisoner(std::string prisonerFile, sf::RenderWindow &window)
 {
 	PState = IDLE;
+	
 	for (int i = 0; i < lastPrisonerPosition.size(); i++) {
 		lastPrisonerPosition[i] = Down;
 		PrisonAnim[i].x = 1;
@@ -63,11 +64,11 @@ Prisoner::Prisoner(std::string prisonerFile, sf::RenderWindow &window)
 			pss.clear();
 			pss.str(ps);
 			pss >> prisonerPath;
-
+			
 			sf::Vector2i pos(prisonerX, prisonerY);
 			sf::Vector2f size(sizeX, sizeY);
-
-
+			prisonerHealth.push_back(100); // giving each of the enemies 100 health to begin with
+			
 			if (!prisonerTexture[i].loadFromFile(prisonerPath)) {
 				std::cout << "Load fail Error on prisonerTexture" << std::endl;
 				system("pause");
@@ -155,6 +156,14 @@ void Prisoner::drawPrisoner(sf::RenderWindow &window, HUD &hud, Player &player) 
 		PState = prisonerAngry;
 	}
 	for (int i = 0; i < prisoners.size(); i++) {
+		if (prisonerHealth[i] <= 0) { // each prisoner has a health amount, if it reaches 0 the state should change to a dead state, the players XP should increase and to remove the item from the vector
+			std::cout << "Prisoner " << i << " has died" << std::endl;
+			PState = deadState;
+			hud.XPcount += 30;
+			prisonerHealth.erase(prisonerHealth.begin() + i); // erasing the prisoner from the vector
+			prisoners.erase(prisoners.begin() + i); // removing the prisoner from the vector - Causes error with collision and other implementations as theres 1 less prisoner
+			
+		}
 		for (int j = 0; j < prisonerTexture.size(); j++) {
 			PrisonAnim[i].x++;
 			if (PrisonAnim[i].x * 32 >= prisonerTexture[j].getSize().x) { // once the sprite reaches the end of the sprite sheet, reset to 0 again
@@ -162,7 +171,7 @@ void Prisoner::drawPrisoner(sf::RenderWindow &window, HUD &hud, Player &player) 
 			}
 		}
 		prisoners[i].setTextureRect(sf::IntRect(PrisonAnim[i].x * 32, PrisonAnim[i].y * 32, 32, 32)); // cropping the image with the position and size of the image 
-
+		
 		window.draw(prisoners[i]);
 	}
 

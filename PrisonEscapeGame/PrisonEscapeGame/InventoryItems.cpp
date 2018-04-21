@@ -113,12 +113,12 @@ void InventoryItems::draw2x2Items(sf::View &view, sf::RenderWindow &window, HUD 
 		for (int i = 0; i < Items2by2.size(); i++) {
 			if (worldPos.x >= Items2by2[i].getPosition().x && worldPos.x <= Items2by2[i].getPosition().x + Items2by2[i].getSize().x) {
 				if (worldPos.y >= Items2by2[i].getPosition().y && worldPos.y <= Items2by2[i].getPosition().y + Items2by2[i].getSize().y) {
+
 					std::cout << "This is Item: " << i << std::endl; // use this method to get the item to inventory
 					if (hud.EmptySlot.size() < 8) {
 						hud.EmptySlot.push_back(Items2by2[i]); // sending the item to the player inventory
 						hud.EmptyTexture.push_back(inventoryTexture[ItemRand2x2[i]]);
-						Items2by2.erase(Items2by2.begin() + i); // erasing the selected Item from the array
-
+						//Items2by2.erase(Items2by2.begin() + i); // erasing the selected Item from the array	
 					}
 				}
 			}

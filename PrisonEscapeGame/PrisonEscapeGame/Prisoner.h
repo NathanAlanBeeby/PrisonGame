@@ -7,7 +7,7 @@
 #include <string>
 #include "Player.h"
 #include "HUD.h"
-enum prisonerState { IDLE, PathFollow, prisonerAngry }; // moving idly, walking to destination, and chasing the player
+enum prisonerState { IDLE, PathFollow, prisonerAngry, deadState }; // moving idly, walking to destination, and chasing the player
 
 
 class Prisoner
@@ -28,8 +28,8 @@ public:
 	float moveSpeed = 5.5;
 	std::vector<sf::Vector2f> vel;
 	std::vector<sf::Vector2f> lastVelocity;
-
-
+	std::vector<float> prisonerHealth;
+	
 	sf::Vector2f getPosition() {
 		for (int i = 0; i < prisoners.size(); i++) {
 			return prisoners[i].getPosition();
@@ -46,7 +46,7 @@ public:
 	sf::Clock PrisonClock;
 	int prisonTime = 0;
 	int PrisonMove = 0;
-	int prisonerHealth = 100;
+	
 	int prisonChoice = 0; // the prisoner thats going to be moved
 
 	bool prisonerAttacked = false;
